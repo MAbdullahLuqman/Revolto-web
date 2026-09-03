@@ -9,8 +9,8 @@ import { Mail, Phone, CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () =>
     pageMeta(
-      "Contact Revoloto — Get a Quote",
-      "Tell us about your ideal customer profile and pipeline goals. We reply with a tailored outbound plan and quote.",
+      "Contact Rovolto — Get a Quote",
+      "Tell us which clients you need to reach. We reply with a lead generation and outreach plan.",
     ),
   component: ContactPage,
 });
@@ -29,11 +29,11 @@ function ContactPage() {
             Contact
           </p>
           <h1 className="font-display text-4xl font-bold leading-tight text-foreground md:text-5xl">
-            Get a quote from Revoloto
+            Get a quote from Rovolto
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Tell us who you sell to and what a good meeting looks like. We'll come back with a
-            channel mix, target volumes, and pricing.
+            Tell us which clients you need to reach, your target accounts, and what a qualified
+            meeting looks like. We'll come back with the data plan, channel mix, and pricing.
           </p>
           <div className="mt-8 space-y-3 text-sm text-muted-foreground">
             <p className="flex items-center gap-3">
@@ -80,7 +80,7 @@ function ContactPage() {
               <textarea
                 className={`${inputClass} min-h-32`}
                 name="message"
-                placeholder="Who do you sell to, and what are your pipeline goals?"
+                placeholder="Which clients, accounts, and pipeline goals matter?"
                 required
               />
               <Button type="submit" size="lg" className="w-full">

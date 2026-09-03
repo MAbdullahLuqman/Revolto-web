@@ -1,28 +1,50 @@
 export const homeContent = {
-  eyebrow: "B2B LEAD GENERATION AGENCY",
-  headline: "Build a sales pipeline that scales with Revoloto",
+  eyebrow: "LEAD GENERATION SERVICES",
+  headline: "Connect with the right clients at the right time",
   subheadline:
-    "We help B2B companies fill their calendars with qualified appointments through outbound strategy, account research, and multi-channel outreach.",
+    "Rovolto helps companies grow with high-quality leads through targeted email marketing, LinkedIn outreach, InMail campaigns, and Sales Navigator strategies powered by Apollo data.",
   cta: "Get a quote",
-  trustLine: "Sales and marketing leaders at growth-stage B2B companies trust Revoloto",
+  trustLine:
+    "Companies use Rovolto to reach the right buyers through clean targeting and managed outreach",
   stats: [
-    { value: "50+", label: "Industries served" },
-    { value: "12k+", label: "Qualified appointments booked" },
-    { value: "94%", label: "Client retention rate" },
-    { value: "3x", label: "Average pipeline lift" },
+    { value: "18k", label: "Profile-fit prospects mapped yearly" },
+    { value: "9k", label: "Marketing-qualified contacts filtered" },
+    { value: "200", label: "Sales-qualified meetings benchmark" },
+    { value: "10-30", label: "Closed-deal range from tracked programs" },
   ],
 } as const;
 
 export const servicesContent = {
-  title: "Outbound services built for modern B2B sales",
+  title: "Lead generation services for modern B2B sales",
   description:
-    "From fully managed appointment setting to targeted LinkedIn campaigns, we run the channels that turn strangers into sales conversations.",
+    "We help firms grow through targeted email marketing, LinkedIn outreach, InMail campaigns, Sales Navigator strategies, and Apollo-backed account data.",
   items: [
+    {
+      slug: "security-contacts",
+      title: "Security contacts",
+      description:
+        "Find CISOs, IT leaders, security managers, compliance owners, and technical buyers matched to your ideal customer profile.",
+      icon: "shield-check",
+    },
+    {
+      slug: "startup-lead-generation",
+      title: "Startup lead generation",
+      description:
+        "Founder-friendly GTM sprints that help early-stage teams land first customers and prove repeatable demand.",
+      icon: "rocket",
+    },
+    {
+      slug: "email-marketing",
+      title: "Email marketing",
+      description:
+        "Targeted email campaigns with clean lists, clear messaging, deliverability basics, and reply-focused follow-up.",
+      icon: "mail",
+    },
     {
       slug: "appointment-setting",
       title: "Appointment setting",
       description:
-        "End-to-end calendar filling. We research, reach out, and book meetings directly into your AEs’ schedules.",
+        "Research, outreach, qualification, and calendar booking with the right clients at the right time.",
       icon: "calendar",
     },
     {
@@ -33,81 +55,25 @@ export const servicesContent = {
       icon: "mail",
     },
     {
-      slug: "cold-calling",
-      title: "Cold calling",
+      slug: "linkedin-sales-navigator-outreach",
+      title: "LinkedIn outreach and Sales Navigator",
       description:
-        "Trained SDRs handle first calls, discovery, objections, and warm handoffs to your sales team.",
-      icon: "phone",
-    },
-    {
-      slug: "linkedin-lead-generation",
-      title: "LinkedIn lead generation",
-      description:
-        "Connection-first outreach, content amplification, and InMail campaigns that open doors at target accounts.",
+        "Connection outreach, InMail campaigns, saved searches, lead lists, account tracking, and Sales Navigator cleanup.",
       icon: "linkedin",
     },
     {
-      slug: "outsourced-sdr",
-      title: "Outsourced SDR",
+      slug: "account-management",
+      title: "Account management",
       description:
-        "A dedicated extension of your sales team without the hiring, training, or tooling overhead.",
-      icon: "users",
+        "Weekly reporting, contact quality review, campaign priorities, and clear next actions for every target account.",
+      icon: "briefcase",
     },
     {
       slug: "sales-development",
       title: "Sales development",
       description:
-        "We design, run, and iterate the full top-of-funnel motion that feeds qualified pipeline to closers.",
+        "We design, run, and iterate the top-of-funnel motion that feeds qualified conversations to closers.",
       icon: "trending-up",
-    },
-    {
-      slug: "demand-generation",
-      title: "Demand generation",
-      description:
-        "Integrated campaigns that create awareness, capture intent, and nurture prospects across channels.",
-      icon: "zap",
-    },
-    {
-      slug: "account-based-marketing",
-      title: "Account-based marketing",
-      description:
-        "Hyper-targeted plays for named accounts with personalized messaging, gifting, and executive engagement.",
-      icon: "target",
-    },
-    {
-      slug: "lead-nurturing",
-      title: "Lead nurturing",
-      description:
-        "Keep cold leads warm with structured follow-up, value-driven content, and intent-triggered re-engagement.",
-      icon: "heart",
-    },
-    {
-      slug: "lead-research",
-      title: "Lead research",
-      description:
-        "Accurate contact data, org mapping, and buyer signals so every outreach dollar is spent on the right people.",
-      icon: "search",
-    },
-    {
-      slug: "crm-consulting",
-      title: "CRM consulting",
-      description:
-        "Clean data architecture, workflow automation, and reporting dashboards that make pipeline predictable.",
-      icon: "database",
-    },
-    {
-      slug: "sales-enablement",
-      title: "Sales enablement",
-      description:
-        "Playbooks, templates, and training so your internal team can convert the meetings we generate.",
-      icon: "briefcase",
-    },
-    {
-      slug: "email-deliverability",
-      title: "Email deliverability",
-      description:
-        "Technical setup, sender reputation, and domain hygiene to keep messages out of spam and in front of buyers.",
-      icon: "shield-check",
     },
     {
       slug: "enterprise-lead-generation",
@@ -123,30 +89,23 @@ export const servicesContent = {
         "High-volume, cost-efficient outbound that reaches small-business decision makers at scale.",
       icon: "store",
     },
-    {
-      slug: "startup-lead-generation",
-      title: "Startup lead generation",
-      description:
-        "Founder-friendly GTM sprints that help early-stage teams land first customers and prove repeatable demand.",
-      icon: "rocket",
-    },
   ],
 } as const;
 
 export const processContent = {
-  title: "How Revoloto works",
+  title: "How Rovolto works",
   steps: [
     {
       number: "01",
-      title: "Discovery",
+      title: "Find",
       description:
-        "We map your ideal customer profile, value proposition, competitive landscape, and existing sales motion.",
+        "We map target buyers, buying committees, account fit, and the contact data needed before any outreach starts.",
     },
     {
       number: "02",
-      title: "Build",
+      title: "Verify",
       description:
-        "Our team sets up infrastructure, writes messaging, builds target account lists, and prepares your dedicated SDR pod.",
+        "Apollo, Sales Navigator, email checks, and manual review keep lists clean before they enter campaigns.",
     },
     {
       number: "03",
@@ -158,7 +117,7 @@ export const processContent = {
       number: "04",
       title: "Optimize",
       description:
-        "Weekly performance reviews, A/B testing, and list refinements keep reply rates and pipeline value trending up.",
+        "Weekly account management, reporting, and list refinements keep contact quality and pipeline value moving.",
     },
   ],
 } as const;
@@ -166,8 +125,14 @@ export const processContent = {
 export const industriesContent = {
   title: "Industry-focused outreach",
   description:
-    "We adapt tone, timing, and targeting to the sectors where you sell. Vertical expertise means faster ramp and better conversations.",
+    "We adapt tone, timing, and targeting to the sectors where you sell. Security is first because clean technical buyer data drives the rest of the campaign.",
   items: [
+    {
+      slug: "security",
+      title: "Security",
+      description:
+        "Reach CISOs, security leaders, IT directors, compliance owners, and technical buyers with verified contact data.",
+    },
     {
       slug: "construction",
       title: "Construction",
@@ -210,9 +175,9 @@ export const caseStudies = [
     slug: "saas-relaunch",
     client: "FlowStack",
     industry: "SaaS",
-    title: "FlowStack cut cost per meeting by 42% with Revoloto",
+    title: "FlowStack cut cost per meeting by 42% with Rovolto",
     summary:
-      "Tighter ICP definition, refreshed messaging, and a dedicated SDR pod helped FlowStack relaunch outbound at scale.",
+      "Tighter ICP definition, verified security contacts, and cleaner account data helped FlowStack relaunch outbound at scale.",
     metric: "42% lower CPM",
     image: "/images/case-flowstack.jpg",
   },
@@ -231,7 +196,7 @@ export const caseStudies = [
 export const testimonials = [
   {
     quote:
-      "Revoloto became an extension of our sales org within two weeks. The quality of conversations and the speed of ramp were both outstanding.",
+      "Rovolto became an extension of our sales org within two weeks. The quality of conversations and the speed of ramp were both outstanding.",
     name: "Dana Chen",
     role: "VP of Sales",
     company: "BrightPath",
@@ -254,14 +219,14 @@ export const testimonials = [
 
 export const faqContent = [
   {
-    question: "How quickly can Revoloto start generating meetings?",
+    question: "How quickly can Rovolto start generating meetings?",
     answer:
-      "Most clients see the first qualified conversations within 3–4 weeks. Ramp depends on data quality, ICP clarity, and your sales calendar availability.",
+      "Most clients see the first qualified conversations within 3-4 weeks. Ramp depends on account fit, contact data quality, ICP clarity, and calendar availability.",
   },
   {
-    question: "Do you provide SDRs or just strategy?",
+    question: "Do you manage Apollo and Sales Navigator?",
     answer:
-      "Both. We offer fully managed SDR pods, strategy-only consulting, and hybrid engagements where we build the system and train your team.",
+      "Yes. We manage Apollo lists, enrichment, segmentation, sequence hygiene, Sales Navigator searches, and weekly contact-quality reviews.",
   },
   {
     question: "Which channels do you use?",

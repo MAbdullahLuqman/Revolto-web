@@ -14,10 +14,10 @@ export const Route = createFileRoute("/approach/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Page not found — Revoloto" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Page not found — Rovolto" }, { name: "robots", content: "noindex" }],
       };
     }
-    return pageMeta(`${loaderData.detail.title} — Revoloto`, loaderData.detail.description);
+    return pageMeta(`${loaderData.detail.title} — Rovolto`, loaderData.detail.description);
   },
   errorComponent: () => (
     <SectionShell>

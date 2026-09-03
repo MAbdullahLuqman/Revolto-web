@@ -13,7 +13,7 @@ function MegaLink({ to, children }: { to: string; children: React.ReactNode }) {
   return (
     <Link
       to={to}
-      className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors duration-150 hover:bg-black/[0.06] hover:text-foreground"
+      className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors duration-150 hover:bg-secondary hover:text-secondary-foreground"
     >
       {children}
     </Link>
@@ -50,7 +50,7 @@ function Dropdown({
         <motion.span
           layoutId="nav-pill"
           transition={spring}
-          className="absolute inset-0 rounded-full bg-black/[0.07]"
+          className="absolute inset-0 rounded-full bg-secondary"
         />
       )}
       <AnimatePresence>
@@ -111,16 +111,12 @@ export function Header() {
                 />
               );
             return (
-              <div
-                key={item.to}
-                className="relative"
-                onMouseEnter={() => setHovered(item.label)}
-              >
+              <div key={item.to} className="relative" onMouseEnter={() => setHovered(item.label)}>
                 {hovered === item.label && (
                   <motion.span
                     layoutId="nav-pill"
                     transition={spring}
-                    className="absolute inset-0 rounded-full bg-black/[0.07]"
+                    className="absolute inset-0 rounded-full bg-secondary"
                   />
                 )}
                 <Link
@@ -146,7 +142,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full text-foreground transition-colors hover:bg-black/[0.06] lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full text-foreground transition-colors hover:bg-secondary lg:hidden"
           onClick={() => setMobileOpen((s) => !s)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
@@ -180,7 +176,7 @@ export function Header() {
                   key={item.to}
                   to={item.to as "/"}
                   onClick={() => setMobileOpen(false)}
-                  className="block rounded-xl px-3 py-2.5 text-base text-muted-foreground transition-colors hover:bg-black/[0.06] hover:text-foreground"
+                  className="block rounded-xl px-3 py-2.5 text-base text-muted-foreground transition-colors hover:bg-secondary hover:text-secondary-foreground"
                 >
                   {item.label}
                 </Link>

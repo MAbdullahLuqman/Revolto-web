@@ -17,11 +17,18 @@ import {
   Mail,
   Phone,
   Linkedin,
-  Users,
   TrendingUp,
   Zap,
   Target,
   ArrowRight,
+  ShieldCheck,
+  Search,
+  Database,
+  BriefcaseBusiness,
+  HeartHandshake,
+  Building2,
+  Store,
+  Rocket,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -29,29 +36,36 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   mail: Mail,
   phone: Phone,
   linkedin: Linkedin,
-  users: Users,
   "trending-up": TrendingUp,
   zap: Zap,
   target: Target,
+  "shield-check": ShieldCheck,
+  search: Search,
+  database: Database,
+  briefcase: BriefcaseBusiness,
+  heart: HeartHandshake,
+  building: Building2,
+  store: Store,
+  rocket: Rocket,
 };
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Revoloto — B2B Lead Generation Agency" },
+      { title: "Rovolto — B2B Lead Generation Agency" },
       {
         name: "description",
         content:
-          "Revoloto builds predictable B2B sales pipeline through appointment setting, cold email, LinkedIn outreach, and dedicated SDR teams.",
+          "Rovolto helps companies grow with targeted email marketing, LinkedIn outreach, InMail campaigns, Sales Navigator strategies, and Apollo data.",
       },
       {
         property: "og:title",
-        content: "Revoloto — B2B Lead Generation Agency",
+        content: "Rovolto — B2B Lead Generation Agency",
       },
       {
         property: "og:description",
         content:
-          "Revoloto builds predictable B2B sales pipeline through appointment setting, cold email, LinkedIn outreach, and dedicated SDR teams.",
+          "Rovolto helps companies grow with targeted email marketing, LinkedIn outreach, InMail campaigns, Sales Navigator strategies, and Apollo data.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -82,51 +96,63 @@ const cardClass =
 function Hero() {
   return (
     <section className="relative isolate overflow-hidden border-b border-border bg-background">
-      <div aria-hidden className="pointer-events-none absolute -left-24 -top-32 size-72 rounded-full border border-border bg-muted sm:-left-20 sm:-top-28 sm:size-96" />
-      <div aria-hidden className="pointer-events-none absolute -left-10 -top-20 size-32 rounded-full bg-primary opacity-90 sm:left-14 sm:size-40" />
-      <div aria-hidden className="pointer-events-none absolute -right-24 top-10 size-56 rounded-full border border-border bg-muted/60 sm:-right-12 sm:-top-28 sm:size-80" />
-      <div aria-hidden className="pointer-events-none absolute -right-32 top-1/3 h-64 w-80 rounded-full bg-muted/70 blur-3xl sm:h-80 sm:w-[30rem]" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-24 -top-32 size-72 rounded-full border border-border bg-muted sm:-left-20 sm:-top-28 sm:size-96"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-10 -top-20 size-32 rounded-full bg-primary opacity-90 sm:left-14 sm:size-40"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 top-10 size-56 rounded-full border border-border bg-muted/60 sm:-right-12 sm:-top-28 sm:size-80"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-32 top-1/3 h-64 w-80 rounded-full bg-muted/70 blur-3xl sm:h-80 sm:w-[30rem]"
+      />
 
       <div className="relative mx-auto flex min-h-[calc(100svh-4rem)] max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
         <div className="flex flex-1 items-center justify-center py-24 sm:py-28">
           <div className="mx-auto max-w-5xl text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease }}
-            className="mb-7 inline-flex items-center gap-2 text-xs font-semibold uppercase text-primary sm:mb-9"
-          >
-            {homeContent.eyebrow}
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.75, ease, delay: 0.05 }}
-            className="mx-auto max-w-4xl font-display text-[2.8rem] font-bold leading-[1.04] text-balance text-foreground sm:text-6xl lg:text-[4.75rem]"
-          >
-            {homeContent.headline}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease, delay: 0.16 }}
-            className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg"
-          >
-            {homeContent.subheadline}
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease, delay: 0.24 }}
-            className="mt-9 flex flex-wrap items-center justify-center gap-3 sm:mt-10"
-          >
-            <Button asChild size="lg">
-              <a href="/contact">{homeContent.cta}</a>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href="/services">Explore services</a>
-            </Button>
-          </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease }}
+              className="mb-7 inline-flex items-center gap-2 text-xs font-semibold uppercase text-primary sm:mb-9"
+            >
+              {homeContent.eyebrow}
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.75, ease, delay: 0.05 }}
+              className="mx-auto max-w-4xl font-display text-[2.8rem] font-bold leading-[1.04] text-balance text-foreground sm:text-6xl lg:text-[4.75rem]"
+            >
+              {homeContent.headline}
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease, delay: 0.16 }}
+              className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg"
+            >
+              {homeContent.subheadline}
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease, delay: 0.24 }}
+              className="mt-9 flex flex-wrap items-center justify-center gap-3 sm:mt-10"
+            >
+              <Button asChild size="lg">
+                <a href="/contact">{homeContent.cta}</a>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a href="/services">Explore services</a>
+              </Button>
+            </motion.div>
           </div>
         </div>
 
@@ -210,13 +236,8 @@ function Process() {
       <Stagger className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         {processContent.steps.map((step) => (
           <StaggerItem key={step.number} className="relative">
-            <span className="font-display text-6xl font-bold text-black/10">{step.number}</span>
-            <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
-              {step.title}
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              {step.description}
-            </p>
+            <h3 className="font-display text-xl font-semibold text-foreground">{step.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.description}</p>
           </StaggerItem>
         ))}
       </Stagger>
@@ -262,7 +283,7 @@ function CaseStudies() {
       <SectionHeader
         eyebrow="Results"
         title="Pipeline our clients can forecast"
-        description="Selected wins from B2B growth companies that partnered with Revoloto for outbound."
+        description="Selected wins from B2B growth companies that partnered with Rovolto for outbound."
         align="center"
       />
       <Stagger className="grid gap-4 md:grid-cols-3">
@@ -294,7 +315,7 @@ function Testimonials() {
   const featured = testimonials.slice(0, 3);
   return (
     <SectionShell>
-      <SectionHeader eyebrow="Testimonials" title="What clients say about Revoloto" align="center" />
+      <SectionHeader eyebrow="Testimonials" title="What clients say about Rovolto" align="center" />
       <Stagger className="grid gap-4 md:grid-cols-3">
         {featured.map((t) => (
           <StaggerItem key={t.name} className="h-full">
@@ -324,7 +345,8 @@ function CTA() {
           Ready to fill your pipeline with qualified meetings?
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          Tell us about your ICP and sales goals. We'll reply with a tailored outbound plan and quote.
+          Tell us about your ICP and sales goals. We'll reply with a tailored outbound plan and
+          quote.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Button asChild size="lg" variant="accent">

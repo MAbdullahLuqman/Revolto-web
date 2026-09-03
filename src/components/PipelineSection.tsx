@@ -24,19 +24,23 @@ const yourPart = [
 ];
 
 const funnel = [
-  { label: "Leads", value: "Up to 18,000* prospects within your client profile", w: "100%", accent: true },
+  {
+    label: "Leads",
+    value: "Up to 18,000* prospects within your client profile",
+    w: "100%",
+    accent: true,
+  },
   { label: "MQLs", value: "Up to 9,000* marketing-qualified leads", w: "88%", accent: false },
-  { label: "SQLs", value: "200* sales-qualified meetings with decision-makers", w: "74%", accent: false },
+  {
+    label: "SQLs",
+    value: "200* sales-qualified meetings with decision-makers",
+    w: "74%",
+    accent: false,
+  },
   { label: "Opportunities", value: "10-30* closed deals", w: "60%", accent: false },
 ];
 
-function Accordion({
-  items,
-  label,
-}: {
-  items: { title: string; body: string }[];
-  label: string;
-}) {
+function Accordion({ items, label }: { items: { title: string; body: string }[]; label: string }) {
   const [open, setOpen] = useState(0);
   return (
     <div className="rounded-2xl border border-border p-4 sm:p-6">
@@ -82,7 +86,7 @@ export function PipelineSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-bold text-balance text-foreground md:text-5xl">
-            How your pipeline will look with Revoloto
+            How your pipeline will look with Rovolto
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
             Focus on scaling your business while we deliver you sales-ready B2B leads.
@@ -109,7 +113,9 @@ export function PipelineSection() {
                   </div>
                   <div
                     className={`flex min-h-[130px] items-center justify-center px-8 py-8 text-center ${
-                      step.accent ? "bg-accent-orange text-accent-orange-foreground" : "bg-navy-900/70 text-foreground"
+                      step.accent
+                        ? "bg-accent-orange text-accent-orange-foreground"
+                        : "bg-navy-900/70 text-foreground"
                     }`}
                     style={{
                       width: step.w,

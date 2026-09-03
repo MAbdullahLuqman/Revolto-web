@@ -15,11 +15,11 @@ export const Route = createFileRoute("/industries/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Industry not found — Revoloto" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Industry not found — Rovolto" }, { name: "robots", content: "noindex" }],
       };
     }
     return pageMeta(
-      `${loaderData.industry.title} Lead Generation — Revoloto`,
+      `${loaderData.industry.title} Lead Generation — Rovolto`,
       loaderData.industry.description,
     );
   },
@@ -62,8 +62,7 @@ function IndustryPage() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {processContent.steps.map((step) => (
             <div key={step.number} className="rounded-2xl border border-border bg-card p-6">
-              <span className="font-display text-3xl font-bold text-black/10">{step.number}</span>
-              <h3 className="mt-2 font-display text-lg font-semibold text-card-foreground">
+              <h3 className="font-display text-lg font-semibold text-card-foreground">
                 {step.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

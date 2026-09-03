@@ -4,9 +4,9 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Revoloto - B2B Lead Generation Agency",
+  title: "Rovolto - Lead Generation Services",
   description:
-    "Revoloto builds predictable B2B sales pipeline through appointment setting, cold email, LinkedIn outreach, and dedicated SDR teams.",
+    "Rovolto helps companies grow with high-quality leads through targeted email marketing, LinkedIn outreach, InMail campaigns, Sales Navigator strategies, and Apollo data.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

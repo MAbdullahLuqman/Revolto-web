@@ -1,10 +1,10 @@
 export const site = {
-  name: "Revoloto",
-  tagline: "B2B lead generation agency",
-  email: "hello@revoloto.com",
+  name: "Rovolto",
+  tagline: "Lead generation services",
+  email: "hello@rovolto.com",
   phone: "+1 (555) 123-4567",
-  domain: "https://revoloto.com",
-  twitter: "@revoloto",
+  domain: "https://rovolto.com",
+  twitter: "@rovolto",
 } as const;
 
 export const nav = {
@@ -17,24 +17,22 @@ export const nav = {
     { label: "Resources", to: "/resources" },
   ],
   services: [
+    { title: "Security contacts", to: "/services/security-contacts" },
+    { title: "Startup lead generation", to: "/services/startup-lead-generation" },
+    { title: "Email marketing", to: "/services/email-marketing" },
     { title: "Appointment setting", to: "/services/appointment-setting" },
     { title: "Cold email outreach", to: "/services/cold-email-outreach" },
-    { title: "Cold calling", to: "/services/cold-calling" },
-    { title: "LinkedIn lead generation", to: "/services/linkedin-lead-generation" },
-    { title: "Outsourced SDR", to: "/services/outsourced-sdr" },
+    {
+      title: "LinkedIn outreach and Sales Navigator",
+      to: "/services/linkedin-sales-navigator-outreach",
+    },
+    { title: "Account management", to: "/services/account-management" },
     { title: "Sales development", to: "/services/sales-development" },
-    { title: "Demand generation", to: "/services/demand-generation" },
-    { title: "Account-based marketing", to: "/services/account-based-marketing" },
-    { title: "Lead nurturing", to: "/services/lead-nurturing" },
-    { title: "Lead research", to: "/services/lead-research" },
-    { title: "CRM consulting", to: "/services/crm-consulting" },
-    { title: "Sales enablement", to: "/services/sales-enablement" },
-    { title: "Email deliverability", to: "/services/email-deliverability" },
     { title: "Enterprise lead generation", to: "/services/enterprise-lead-generation" },
     { title: "SMB lead generation", to: "/services/smb-lead-generation" },
-    { title: "Startup lead generation", to: "/services/startup-lead-generation" },
   ],
   industries: [
+    { title: "Security", to: "/industries/security" },
     { title: "Construction", to: "/industries/construction" },
     { title: "Consulting", to: "/industries/consulting" },
     { title: "Finance", to: "/industries/finance" },
@@ -73,8 +71,8 @@ export const nav = {
     { title: "Anti-modern slavery", to: "/legal/anti-modern-slavery" },
   ],
   social: [
-    { label: "LinkedIn", href: "https://linkedin.com/company/revoloto" },
-    { label: "Twitter", href: "https://twitter.com/revoloto" },
-    { label: "YouTube", href: "https://youtube.com/revoloto" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/rovoltoservices/" },
+    { label: "Twitter", href: "https://twitter.com/rovolto" },
+    { label: "YouTube", href: "https://youtube.com/rovolto" },
   ],
 } as const;

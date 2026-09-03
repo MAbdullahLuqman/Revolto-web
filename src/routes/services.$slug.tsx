@@ -19,17 +19,16 @@ export const Route = createFileRoute("/services/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Service not found — Revoloto" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Service not found — Rovolto" }, { name: "robots", content: "noindex" }],
       };
     }
-    return pageMeta(
-      `${loaderData.service.title} — Revoloto`,
-      loaderData.service.description,
-    );
+    return pageMeta(`${loaderData.service.title} — Rovolto`, loaderData.service.description);
   },
   errorComponent: () => (
     <SectionShell>
-      <p className="text-center text-muted-foreground">Something went wrong loading this service.</p>
+      <p className="text-center text-muted-foreground">
+        Something went wrong loading this service.
+      </p>
     </SectionShell>
   ),
   notFoundComponent: ServiceNotFound,
@@ -65,16 +64,13 @@ function ServicePage() {
       <SectionShell>
         <SectionHeader
           eyebrow="Deliverables"
-          title={`What ${service.title.toLowerCase()} looks like with Revoloto`}
+          title={`What ${service.title.toLowerCase()} looks like with Rovolto`}
           align="center"
         />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {processContent.steps.map((step) => (
             <div key={step.number} className="rounded-2xl border border-border bg-card p-6">
-              <span className="font-display text-3xl font-bold text-black/10">
-                {step.number}
-              </span>
-              <h3 className="mt-2 font-display text-lg font-semibold text-card-foreground">
+              <h3 className="font-display text-lg font-semibold text-card-foreground">
                 {step.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

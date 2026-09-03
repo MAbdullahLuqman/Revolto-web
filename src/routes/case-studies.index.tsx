@@ -8,8 +8,8 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/case-studies/")({
   head: () =>
     pageMeta(
-      "B2B Lead Generation Case Studies — Revoloto",
-      "See how Revoloto built pipeline for fintech, SaaS, and manufacturing clients through outbound campaigns.",
+      "B2B Lead Generation Case Studies — Rovolto",
+      "See how Rovolto built pipeline for fintech, SaaS, and manufacturing clients through outbound campaigns.",
     ),
   component: CaseStudiesIndex,
 });

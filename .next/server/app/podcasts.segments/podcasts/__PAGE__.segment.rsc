@@ -1,23 +1,24 @@
 1:"$Sreact.fragment"
 2:I[1304,[],"ClientPageRoot"]
-3:I[4899,["38","static/chunks/38-ee0ca5fcbe169ff0.js","990","static/chunks/app/podcasts/page-5db23680d56286e2.js"],"default"]
+3:I[4899,["38","static/chunks/38-ee0ca5fcbe169ff0.js","990","static/chunks/app/podcasts/page-4fb956ba728e325f.js"],"default"]
 6:I[484,[],"OutletBoundary"]
 7:"$Sreact.suspense"
 b:I[484,[],"ViewportBoundary"]
 c:I[484,[],"MetadataBoundary"]
-e:I[7121,[],""]
-f:I[4581,[],""]
+d:I[6869,[],"IconMark"]
+f:I[7121,[],""]
+10:I[4581,[],""]
 a:X
-11:X
-11:C
-0:{"buildId":"vMndZUe1VUgWaw6bEXAU0","data":[{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],null,["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":"$@9","staleTime":"$a","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$Lb",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$Lc",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Revoloto - B2B Lead Generation Agency"}],["$","meta","1",{"name":"description","content":"Revoloto builds predictable B2B sales pipeline through appointment setting, cold email, LinkedIn outreach, and dedicated SDR teams."}]]}]}]}],null]}],"isPartial":"$@d","staleTime":"$a","varyParams":null},{"rsc":["$","$1","c",{"children":[null,["$","$Le",null,{"parallelRouterKey":"children","template":["$","$Lf",null,{}]}]]}],"isPartial":"$@10","staleTime":"$a","varyParams":"$11"}],"isUpgradeableISRFallback":false,"a":"$@12","rootVaryParams":null,"needsRuntimeRequest":"$@13"}
+12:X
+12:C
+0:{"buildId":"Ebwn3HBisPo-qa0t_Hc9A","data":[{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],null,["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":"$@9","staleTime":"$a","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$Lb",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$Lc",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Rovolto - Lead Generation Services"}],["$","meta","1",{"name":"description","content":"Rovolto helps companies grow with high-quality leads through targeted email marketing, LinkedIn outreach, InMail campaigns, Sales Navigator strategies, and Apollo data."}],["$","link","2",{"rel":"icon","href":"/favicon.ico?6e37c68fc55749ad","type":"image/x-icon","sizes":"32x32"}],["$","link","3",{"rel":"icon","href":"/icon.jpeg?71176d71d2b8c9f3","type":"image/jpeg","sizes":"200x200"}],["$","link","4",{"rel":"icon","href":"/icon.png?539f12d243830d6d","type":"image/png","sizes":"32x32"}],["$","link","5",{"rel":"apple-touch-icon","href":"/apple-icon.png?ae203c23b2788355","type":"image/png","sizes":"180x180"}],["$","$Ld","6",{}]]}]}]}],null]}],"isPartial":"$@e","staleTime":"$a","varyParams":null},{"rsc":["$","$1","c",{"children":[null,["$","$Lf",null,{"parallelRouterKey":"children","template":["$","$L10",null,{}]}]]}],"isPartial":"$@11","staleTime":"$a","varyParams":"$12"}],"isUpgradeableISRFallback":false,"a":"$@13","rootVaryParams":null,"needsRuntimeRequest":"$@14"}
 4:{}
 5:"$0:data:0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null
-13:true
+14:true
 a:300
 a:C
-12:0
-d:"$undefined"
-10:"$undefined"
+13:0
+e:"$undefined"
+11:"$undefined"
 9:"$undefined"

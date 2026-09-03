@@ -24,9 +24,7 @@ export function SimplePage({
         <div className="grid gap-8 md:grid-cols-2">
           {blocks.map((b) => (
             <div key={b.title} className="rounded-2xl border border-border bg-card p-8">
-              <h2 className="font-display text-xl font-semibold text-card-foreground">
-                {b.title}
-              </h2>
+              <h2 className="font-display text-xl font-semibold text-card-foreground">{b.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.body}</p>
             </div>
           ))}
@@ -34,7 +32,9 @@ export function SimplePage({
       </SectionShell>
       <SectionShell variant="navy">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">{ctaTitle}</h2>
+          <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
+            {ctaTitle}
+          </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Share your ICP and goals — we'll send back a tailored outbound plan and quote.
           </p>

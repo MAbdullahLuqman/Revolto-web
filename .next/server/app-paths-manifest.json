@@ -1,6 +1,10 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/_global-error/page": "app/_global-error/page.js",
+  "/apple-icon.png/route": "app/apple-icon.png/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/icon.jpeg/route": "app/icon.jpeg/route.js",
+  "/icon.png/route": "app/icon.png/route.js",
   "/about/page": "app/about/page.js",
   "/approach/[slug]/page": "app/approach/[slug]/page.js",
   "/approach/page": "app/approach/page.js",

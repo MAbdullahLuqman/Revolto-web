@@ -9,8 +9,8 @@ import { approachDetails } from "@/data/approach";
 export const Route = createFileRoute("/approach/")({
   head: () =>
     pageMeta(
-      "Our Approach — Revoloto",
-      "Discovery, build, launch, and optimize: the Revoloto method for predictable B2B pipeline.",
+      "Our Approach — Rovolto",
+      "Discovery, build, launch, and optimize: the Rovolto method for predictable B2B pipeline.",
     ),
   component: ApproachIndex,
 });
@@ -39,7 +39,11 @@ function ApproachIndex() {
         </div>
       </SectionShell>
       <SectionShell variant="muted">
-        <SectionHeader eyebrow="Disciplines" title="The teams behind every campaign" align="center" />
+        <SectionHeader
+          eyebrow="Disciplines"
+          title="The teams behind every campaign"
+          align="center"
+        />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {approachDetails.map((a) => (
             <Link

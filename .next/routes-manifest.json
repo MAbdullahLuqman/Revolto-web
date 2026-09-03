@@ -89,6 +89,12 @@
       "namedRegex": "^/about(?:/)?$"
     },
     {
+      "page": "/apple-icon.png",
+      "regex": "^/apple\\-icon\\.png(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/apple\\-icon\\.png(?:/)?$"
+    },
+    {
       "page": "/approach",
       "regex": "^/approach(?:/)?$",
       "routeKeys": {},
@@ -129,6 +135,24 @@
       "regex": "^/data\\-studies(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/data\\-studies(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/icon.jpeg",
+      "regex": "^/icon\\.jpeg(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/icon\\.jpeg(?:/)?$"
+    },
+    {
+      "page": "/icon.png",
+      "regex": "^/icon\\.png(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/icon\\.png(?:/)?$"
     },
     {
       "page": "/industries",

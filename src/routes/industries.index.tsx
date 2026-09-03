@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/industries/")({
   head: () =>
     pageMeta(
-      "Industries We Serve — Revoloto",
+      "Industries We Serve — Rovolto",
       "Industry-specific B2B outbound for construction, consulting, finance, and manufacturing companies.",
     ),
   component: IndustriesIndex,

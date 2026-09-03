@@ -34,8 +34,8 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Logo />
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              Revoloto helps B2B companies build predictable pipeline through
-              outbound strategy, research, and multi-channel outreach.
+              Rovolto helps companies grow with high-quality leads through targeted email marketing,
+              LinkedIn outreach, InMail campaigns, Sales Navigator strategies, and Apollo data.
             </p>
             <div className="mt-6 space-y-1 text-sm text-muted-foreground">
               <p>
@@ -101,7 +101,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Revoloto. All rights reserved.
+            © {new Date().getFullYear()} Rovolto. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             {nav.legal.map((l) => (

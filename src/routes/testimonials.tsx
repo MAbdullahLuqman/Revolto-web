@@ -7,8 +7,8 @@ import { testimonials, homeContent } from "@/data/content";
 export const Route = createFileRoute("/testimonials")({
   head: () =>
     pageMeta(
-      "Client Testimonials — Revoloto",
-      "Sales and marketing leaders on what it's like to run outbound with Revoloto.",
+      "Client Testimonials — Rovolto",
+      "Sales and marketing leaders on what it's like to run outbound with Rovolto.",
     ),
   component: TestimonialsPage,
 });
@@ -18,7 +18,7 @@ function TestimonialsPage() {
     <>
       <PageHero
         eyebrow="Testimonials"
-        title="What clients say about working with Revoloto"
+        title="What clients say about working with Rovolto"
         description="Feedback from the sales and marketing leaders who trust us with their pipeline."
       />
       <SectionShell>

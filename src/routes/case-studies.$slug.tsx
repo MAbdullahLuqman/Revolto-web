@@ -15,10 +15,10 @@ export const Route = createFileRoute("/case-studies/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Case study not found — Revoloto" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Case study not found — Rovolto" }, { name: "robots", content: "noindex" }],
       };
     }
-    return pageMeta(`${loaderData.study.title} — Revoloto`, loaderData.study.summary);
+    return pageMeta(`${loaderData.study.title} — Rovolto`, loaderData.study.summary);
   },
   errorComponent: () => (
     <SectionShell>
@@ -44,7 +44,11 @@ function CaseStudyPage() {
   const { study } = Route.useLoaderData();
   return (
     <>
-      <PageHero eyebrow={`${study.client} · ${study.industry}`} title={study.title} description={study.summary} />
+      <PageHero
+        eyebrow={`${study.client} · ${study.industry}`}
+        title={study.title}
+        description={study.summary}
+      />
       <SectionShell>
         <div className="grid gap-6 sm:grid-cols-3">
           <div className="rounded-2xl border border-border bg-card p-6">
@@ -66,10 +70,7 @@ function CaseStudyPage() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {processContent.steps.map((s) => (
             <div key={s.number} className="rounded-2xl border border-border bg-card p-6">
-              <span className="font-display text-3xl font-bold text-black/10">{s.number}</span>
-              <h2 className="mt-2 font-display text-lg font-semibold text-card-foreground">
-                {s.title}
-              </h2>
+              <h2 className="font-display text-lg font-semibold text-card-foreground">{s.title}</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.description}</p>
             </div>
           ))}

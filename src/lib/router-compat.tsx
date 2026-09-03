@@ -5,18 +5,20 @@ import React, { createContext, useContext, type ComponentType, type ReactNode } 
 
 const LoaderDataContext = createContext<unknown>(null);
 
-type RouteConfig = {
+type RouteParams = Record<string, string> & { slug: string };
+
+type RouteConfig<TLoaderData = unknown> = {
   component: ComponentType;
-  loader?: (args: { params: any }) => unknown;
-  head?: (args: any) => unknown;
+  loader?: (args: { params: RouteParams }) => TLoaderData;
+  head?: (args: { loaderData?: TLoaderData }) => unknown;
   notFoundComponent?: ComponentType;
   errorComponent?: ComponentType<{ error?: Error }>;
 };
 
 export function createFileRoute(_path: string) {
-  return (config: RouteConfig & Record<string, unknown>) => ({
+  return <TLoaderData,>(config: RouteConfig<TLoaderData> & Record<string, unknown>) => ({
     ...config,
-    useLoaderData: () => useContext(LoaderDataContext) as any,
+    useLoaderData: () => useContext(LoaderDataContext) as TLoaderData,
   });
 }
 
@@ -50,15 +52,15 @@ export function Link({
   );
 }
 
-export function RouteRenderer({
+export function RouteRenderer<TLoaderData>({
   route,
   params = {},
 }: {
-  route: RouteConfig;
+  route: RouteConfig<TLoaderData>;
   params?: Record<string, string>;
 }) {
   try {
-    const loaderData = route.loader?.({ params });
+    const loaderData = route.loader?.({ params: params as RouteParams });
     const Component = route.component;
     return (
       <LoaderDataContext.Provider value={loaderData}>
