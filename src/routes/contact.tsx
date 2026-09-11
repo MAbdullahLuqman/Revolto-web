@@ -4,8 +4,6 @@ import { SectionShell } from "@/components/SectionShell";
 import { Button } from "@/components/Button";
 import { pageMeta } from "@/components/SimplePage";
 import { site } from "@/data/site";
-import { db } from "@/lib/firebase";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { Mail, CheckCircle2 } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
@@ -66,15 +64,11 @@ function ContactPage() {
                 setSending(true);
                 const form = new FormData(e.currentTarget);
                 try {
-                  await addDoc(collection(db, "leads"), {
-                    firstName: form.get("firstName"),
-                    lastName: form.get("lastName"),
-                    email: form.get("email"),
-                    company: form.get("company"),
-                    website: form.get("website"),
-                    message: form.get("message"),
-                    createdAt: serverTimestamp(),
+                  const response = await fetch("/api/leads", {
+                    method: "POST",
+                    body: form,
                   });
+                  if (!response.ok) throw new Error("Failed to save lead");
                   setSent(true);
                 } catch {
                   setError("Could not save your request. Please email us directly.");

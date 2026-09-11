@@ -1,6 +1,8 @@
 {
   "/_not-found/page": "/_not-found",
   "/_global-error/page": "/_global-error",
+  "/api/admin/login/route": "/api/admin/login",
+  "/api/leads/route": "/api/leads",
   "/apple-icon.png/route": "/apple-icon.png",
   "/favicon.ico/route": "/favicon.ico",
   "/icon.jpeg/route": "/icon.jpeg",

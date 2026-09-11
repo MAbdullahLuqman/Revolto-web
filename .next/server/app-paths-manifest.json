@@ -1,6 +1,8 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/_global-error/page": "app/_global-error/page.js",
+  "/api/admin/login/route": "app/api/admin/login/route.js",
+  "/api/leads/route": "app/api/leads/route.js",
   "/apple-icon.png/route": "app/apple-icon.png/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/icon.jpeg/route": "app/icon.jpeg/route.js",
