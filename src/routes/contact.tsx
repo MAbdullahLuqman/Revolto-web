@@ -4,13 +4,15 @@ import { SectionShell } from "@/components/SectionShell";
 import { Button } from "@/components/Button";
 import { pageMeta } from "@/components/SimplePage";
 import { site } from "@/data/site";
-import { Mail, Phone, CheckCircle2 } from "lucide-react";
+import { db } from "@/lib/firebase";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { Mail, CheckCircle2 } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () =>
     pageMeta(
       "Contact Rovolto — Get a Quote",
-      "Tell us which clients you need to reach. We reply with a lead generation and outreach plan.",
+      "Tell us which prospects you need to reach. We reply with a lead generation and outreach plan.",
     ),
   component: ContactPage,
 });
@@ -20,6 +22,8 @@ const inputClass =
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
+  const [sending, setSending] = useState(false);
 
   return (
     <SectionShell>
@@ -32,15 +36,12 @@ function ContactPage() {
             Get a quote from Rovolto
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Tell us which clients you need to reach, your target accounts, and what a qualified
+            Tell us which prospects you need to reach, your target accounts, and what a qualified
             meeting looks like. We'll come back with the data plan, channel mix, and pricing.
           </p>
           <div className="mt-8 space-y-3 text-sm text-muted-foreground">
             <p className="flex items-center gap-3">
               <Mail className="h-4 w-4 text-accent-orange" /> {site.email}
-            </p>
-            <p className="flex items-center gap-3">
-              <Phone className="h-4 w-4 text-accent-orange" /> {site.phone}
             </p>
           </div>
         </div>
@@ -59,9 +60,27 @@ function ContactPage() {
           ) : (
             <form
               className="space-y-4"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                setSent(true);
+                setError("");
+                setSending(true);
+                const form = new FormData(e.currentTarget);
+                try {
+                  await addDoc(collection(db, "leads"), {
+                    firstName: form.get("firstName"),
+                    lastName: form.get("lastName"),
+                    email: form.get("email"),
+                    company: form.get("company"),
+                    website: form.get("website"),
+                    message: form.get("message"),
+                    createdAt: serverTimestamp(),
+                  });
+                  setSent(true);
+                } catch {
+                  setError("Could not save your request. Please email us directly.");
+                } finally {
+                  setSending(false);
+                }
               }}
             >
               <div className="grid gap-4 sm:grid-cols-2">
@@ -80,12 +99,13 @@ function ContactPage() {
               <textarea
                 className={`${inputClass} min-h-32`}
                 name="message"
-                placeholder="Which clients, accounts, and pipeline goals matter?"
+                placeholder="Which prospects, accounts, and pipeline goals matter?"
                 required
               />
               <Button type="submit" size="lg" className="w-full">
-                Get a quote
+                {sending ? "Sending..." : "Get a quote"}
               </Button>
+              {error ? <p className="text-sm text-red-600">{error}</p> : null}
               <p className="text-xs text-muted-foreground">
                 By submitting you agree to our privacy policy.
               </p>

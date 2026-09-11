@@ -1,10 +1,8 @@
 export const site = {
   name: "Rovolto",
   tagline: "Lead generation services",
-  email: "hello@rovolto.com",
-  phone: "+1 (555) 123-4567",
+  email: "ahmad@rovolto.net",
   domain: "https://rovolto.com",
-  twitter: "@rovolto",
 } as const;
 
 export const nav = {
@@ -14,10 +12,9 @@ export const nav = {
     { label: "Approach", to: "/approach" },
     { label: "Pricing", to: "/pricing" },
     { label: "About", to: "/about" },
-    { label: "Resources", to: "/resources" },
   ],
   services: [
-    { title: "Security contacts", to: "/services/security-contacts" },
+    { title: "Security contracts", to: "/services/security-contacts" },
     { title: "Startup lead generation", to: "/services/startup-lead-generation" },
     { title: "Email marketing", to: "/services/email-marketing" },
     { title: "Appointment setting", to: "/services/appointment-setting" },
@@ -37,6 +34,7 @@ export const nav = {
     { title: "Consulting", to: "/industries/consulting" },
     { title: "Finance", to: "/industries/finance" },
     { title: "Manufacturing", to: "/industries/manufacturing" },
+    { title: "Retail", to: "/industries/retail" },
   ],
   approach: [
     { title: "Our approach", to: "/approach" },
@@ -48,20 +46,8 @@ export const nav = {
   ],
   company: [
     { title: "About us", to: "/about" },
-    { title: "Careers", to: "/careers" },
-    { title: "Awards", to: "/awards" },
-    { title: "Testimonials", to: "/testimonials" },
+    { title: "Testimonials", to: "/case-studies#testimonials" },
     { title: "Contact", to: "/contact" },
-  ],
-  resources: [
-    { title: "Resources hub", to: "/resources" },
-    { title: "Blog", to: "/blog" },
-    { title: "Case studies", to: "/case-studies" },
-    { title: "Data studies", to: "/data-studies" },
-    { title: "Podcasts", to: "/podcasts" },
-    { title: "Webinars", to: "/webinars" },
-    { title: "Training", to: "/training" },
-    { title: "ROI calculator", to: "/roi-calculator" },
   ],
   legal: [
     { title: "Privacy policy", to: "/legal/privacy-policy" },
@@ -70,9 +56,5 @@ export const nav = {
     { title: "Accessibility", to: "/legal/accessibility" },
     { title: "Anti-modern slavery", to: "/legal/anti-modern-slavery" },
   ],
-  social: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/company/rovoltoservices/" },
-    { label: "Twitter", href: "https://twitter.com/rovolto" },
-    { label: "YouTube", href: "https://youtube.com/rovolto" },
-  ],
+  social: [{ label: "LinkedIn", href: "https://www.linkedin.com/company/rovoltoservices/" }],
 } as const;

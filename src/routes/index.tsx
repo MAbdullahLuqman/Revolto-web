@@ -179,6 +179,9 @@ function Stats() {
               {stat.value}
             </p>
             <p className="mt-3 text-sm text-muted-foreground">{stat.label}</p>
+            {"note" in stat ? (
+              <p className="mt-1 text-xs text-muted-foreground">{stat.note}</p>
+            ) : null}
           </StaggerItem>
         ))}
       </Stagger>
@@ -282,7 +285,7 @@ function CaseStudies() {
     <SectionShell variant="muted">
       <SectionHeader
         eyebrow="Results"
-        title="Pipeline our clients can forecast"
+        title="Pipeline our prospects can forecast"
         description="Selected wins from B2B growth companies that partnered with Rovolto for outbound."
         align="center"
       />
@@ -315,7 +318,11 @@ function Testimonials() {
   const featured = testimonials.slice(0, 3);
   return (
     <SectionShell>
-      <SectionHeader eyebrow="Testimonials" title="What clients say about Rovolto" align="center" />
+      <SectionHeader
+        eyebrow="Testimonials"
+        title="What prospects say about Rovolto"
+        align="center"
+      />
       <Stagger className="grid gap-4 md:grid-cols-3">
         {featured.map((t) => (
           <StaggerItem key={t.name} className="h-full">

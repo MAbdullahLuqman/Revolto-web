@@ -89,6 +89,12 @@
       "namedRegex": "^/about(?:/)?$"
     },
     {
+      "page": "/admin",
+      "regex": "^/admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin(?:/)?$"
+    },
+    {
       "page": "/apple-icon.png",
       "regex": "^/apple\\-icon\\.png(?:/)?$",
       "routeKeys": {},
@@ -101,24 +107,6 @@
       "namedRegex": "^/approach(?:/)?$"
     },
     {
-      "page": "/awards",
-      "regex": "^/awards(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/awards(?:/)?$"
-    },
-    {
-      "page": "/blog",
-      "regex": "^/blog(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog(?:/)?$"
-    },
-    {
-      "page": "/careers",
-      "regex": "^/careers(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/careers(?:/)?$"
-    },
-    {
       "page": "/case-studies",
       "regex": "^/case\\-studies(?:/)?$",
       "routeKeys": {},
@@ -129,12 +117,6 @@
       "regex": "^/contact(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/contact(?:/)?$"
-    },
-    {
-      "page": "/data-studies",
-      "regex": "^/data\\-studies(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/data\\-studies(?:/)?$"
     },
     {
       "page": "/favicon.ico",
@@ -161,22 +143,10 @@
       "namedRegex": "^/industries(?:/)?$"
     },
     {
-      "page": "/podcasts",
-      "regex": "^/podcasts(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/podcasts(?:/)?$"
-    },
-    {
       "page": "/pricing",
       "regex": "^/pricing(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/pricing(?:/)?$"
-    },
-    {
-      "page": "/resources",
-      "regex": "^/resources(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/resources(?:/)?$"
     },
     {
       "page": "/roi-calculator",

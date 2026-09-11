@@ -5,7 +5,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 73439,
+      "htmlSize": 71667,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -62,7 +62,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 28229,
+      "htmlSize": 24910,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -90,7 +90,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 33035,
+      "htmlSize": 29742,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -105,6 +105,34 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/about",
       "dataRoute": "/about.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/admin": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 25059,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/admin",
+      "dataRoute": "/admin.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -150,7 +178,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 34655,
+      "htmlSize": 31362,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -174,95 +202,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/awards": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 33007,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/awards",
-      "dataRoute": "/awards.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/blog": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 33023,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/blog",
-      "dataRoute": "/blog.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/careers": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 33009,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/careers",
-      "dataRoute": "/careers.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/case-studies": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 33851,
+      "htmlSize": 37416,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -290,7 +234,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 31622,
+      "htmlSize": 28313,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -305,34 +249,6 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/contact",
       "dataRoute": "/contact.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/data-studies": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 32975,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/data-studies",
-      "dataRoute": "/data-studies.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -442,7 +358,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 34919,
+      "htmlSize": 32451,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -466,39 +382,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/podcasts": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 32869,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/podcasts",
-      "dataRoute": "/podcasts.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/pricing": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 33063,
+      "htmlSize": 29770,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -522,39 +410,11 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/resources": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 32524,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/resources",
-      "dataRoute": "/resources.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/roi-calculator": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 32964,
+      "htmlSize": 29684,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -582,7 +442,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 39339,
+      "htmlSize": 36056,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -610,7 +470,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 32870,
+      "htmlSize": 37415,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -638,7 +498,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 32942,
+      "htmlSize": 29649,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -666,7 +526,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 32864,
+      "htmlSize": 29571,
       "experimentalBypassFor": [
         {
           "type": "header",

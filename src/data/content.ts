@@ -1,16 +1,16 @@
 export const homeContent = {
   eyebrow: "LEAD GENERATION SERVICES",
-  headline: "Connect with the right clients at the right time",
+  headline: "Connect with the right prospects at the right time",
   subheadline:
     "Rovolto helps companies grow with high-quality leads through targeted email marketing, LinkedIn outreach, InMail campaigns, and Sales Navigator strategies powered by Apollo data.",
   cta: "Get a quote",
   trustLine:
-    "Companies use Rovolto to reach the right buyers through clean targeting and managed outreach",
+    "Companies use Rovolto to reach the right prospects through clean targeting and managed outreach",
   stats: [
     { value: "18k", label: "Profile-fit prospects mapped yearly" },
     { value: "9k", label: "Marketing-qualified contacts filtered" },
-    { value: "200", label: "Sales-qualified meetings benchmark" },
-    { value: "10-30", label: "Closed-deal range from tracked programs" },
+    { value: "200+", label: "Qualified meetings" },
+    { value: "$1M+", label: "Revenue generated", note: "10-30 converted deals" },
   ],
 } as const;
 
@@ -21,9 +21,9 @@ export const servicesContent = {
   items: [
     {
       slug: "security-contacts",
-      title: "Security contacts",
+      title: "Security contracts",
       description:
-        "Find CISOs, IT leaders, security managers, compliance owners, and technical buyers matched to your ideal customer profile.",
+        "Reach property managers, construction managers, security managers, and procurement buyers matched to your ideal prospect profile.",
       icon: "shield-check",
     },
     {
@@ -44,7 +44,7 @@ export const servicesContent = {
       slug: "appointment-setting",
       title: "Appointment setting",
       description:
-        "Research, outreach, qualification, and calendar booking with the right clients at the right time.",
+        "Research, outreach, qualification, and calendar booking with the right prospects at the right time.",
       icon: "calendar",
     },
     {
@@ -131,7 +131,7 @@ export const industriesContent = {
       slug: "security",
       title: "Security",
       description:
-        "Reach CISOs, security leaders, IT directors, compliance owners, and technical buyers with verified contact data.",
+        "Reach property managers, construction managers, security leaders, and procurement buyers with verified contact data.",
     },
     {
       slug: "construction",
@@ -157,39 +157,75 @@ export const industriesContent = {
       description:
         "Connect with operations, supply-chain, and plant leadership at industrial buyers around the world.",
     },
+    {
+      slug: "retail",
+      title: "Retail",
+      description:
+        "Reach retail operators, property teams, and regional managers with clean targeting and direct outreach.",
+    },
   ],
 } as const;
 
 export const caseStudies = [
   {
-    slug: "fintech-expansion",
-    client: "PayNova",
-    industry: "Fintech",
-    title: "How PayNova booked 140 qualified demos in 90 days",
+    slug: "multifamily-night-patrol",
+    client: "Multifamily property group",
+    industry: "Multifamily Residentials",
+    title: "700-unit property requested active night patrol coverage",
     summary:
-      "A unified cold email and LinkedIn campaign rebuilt PayNova’s enterprise pipeline after a stalled launch.",
-    metric: "140 qualified demos",
-    image: "/images/case-paynova.jpg",
+      "Outbound follow-up turned into a detailed proposal request for active courtesy patrol, parking enforcement, amenity closures, and resident response.",
+    metric: "700 units",
+    image: "/images/case-studies/security-proposal-1.jpg",
   },
   {
-    slug: "saas-relaunch",
-    client: "FlowStack",
-    industry: "SaaS",
-    title: "FlowStack cut cost per meeting by 42% with Rovolto",
+    slug: "three-property-night-patrol",
+    client: "Residential property manager",
+    industry: "Multifamily Residentials",
+    title: "Property manager asked for pricing across three sites",
     summary:
-      "Tighter ICP definition, verified security contacts, and cleaner account data helped FlowStack relaunch outbound at scale.",
-    metric: "42% lower CPM",
-    image: "/images/case-flowstack.jpg",
+      "A property management prospect requested separate pricing for three night patrol properties, including incident response and weekly PDF reporting.",
+    metric: "3 properties",
+    image: "/images/case-studies/security-proposal-2.jpg",
   },
   {
-    slug: "manufacturing-growth",
-    client: "Apex Industrial",
-    industry: "Manufacturing",
-    title: "Apex Industrial opened conversations in three new regions",
+    slug: "community-security-bid",
+    client: "Community manager",
+    industry: "Multifamily Residentials",
+    title: "Community manager requested a bid for nightly security visits",
     summary:
-      "Regionalized campaigns and localized account research generated meetings with procurement leaders across EMEA.",
-    metric: "3 new regions",
-    image: "/images/case-apex.jpg",
+      "Cold outreach generated a direct bid request for two security visits per night, including property lockup at 10:00 PM.",
+    metric: "2 visits nightly",
+    image: "/images/case-studies/security-proposal-3.jpg",
+  },
+  {
+    slug: "construction-security-coverage",
+    client: "Construction company",
+    industry: "Construction",
+    title: "Construction prospect requested hourly security rates",
+    summary:
+      "A construction prospect asked for a proposal covering weekday overnight coverage and 24-hour weekend coverage.",
+    metric: "24-hour coverage",
+    image: "/images/case-studies/security-proposal-4.jpg",
+  },
+  {
+    slug: "operations-director-meeting",
+    client: "Operations director",
+    industry: "Multifamily Residentials",
+    title: "Operations leader booked time to discuss mobile patrol",
+    summary:
+      "Follow-up outreach led to a meeting request from an operations director and interest in mobile patrol services.",
+    metric: "Meeting booked",
+    image: "/images/case-studies/security-proposal-5.jpg",
+  },
+  {
+    slug: "new-development-security",
+    client: "Development manager",
+    industry: "Construction",
+    title: "Developer opened a security conversation for a Dallas project",
+    summary:
+      "A real estate development prospect replied during acquisition planning and offered time for a quick call.",
+    metric: "New development",
+    image: "/images/case-studies/security-proposal-6.jpg",
   },
 ] as const;
 
@@ -221,7 +257,7 @@ export const faqContent = [
   {
     question: "How quickly can Rovolto start generating meetings?",
     answer:
-      "Most clients see the first qualified conversations within 3-4 weeks. Ramp depends on account fit, contact data quality, ICP clarity, and calendar availability.",
+      "Most campaigns see the first qualified conversations within 3-4 weeks. Ramp depends on account fit, contact data quality, ICP clarity, and calendar availability.",
   },
   {
     question: "Do you manage Apollo and Sales Navigator?",

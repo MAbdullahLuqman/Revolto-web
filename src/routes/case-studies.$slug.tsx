@@ -50,6 +50,13 @@ function CaseStudyPage() {
         description={study.summary}
       />
       <SectionShell>
+        <img
+          src={study.image}
+          alt=""
+          className="mx-auto max-h-[720px] w-full max-w-5xl rounded-2xl border border-border object-contain"
+        />
+      </SectionShell>
+      <SectionShell>
         <div className="grid gap-6 sm:grid-cols-3">
           <div className="rounded-2xl border border-border bg-card p-6">
             <p className="font-display text-3xl font-bold text-accent-orange">{study.metric}</p>

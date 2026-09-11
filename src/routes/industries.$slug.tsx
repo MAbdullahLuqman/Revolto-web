@@ -6,6 +6,24 @@ import { Button } from "@/components/Button";
 import { pageMeta } from "@/components/SimplePage";
 import { industriesContent, processContent, servicesContent } from "@/data/content";
 
+const securitySteps = [
+  "Data extraction",
+  "Email marketing",
+  "LinkedIn outreach",
+  "Cold email outreach",
+  "Vendor registration",
+  "Appointment setting",
+];
+
+const sectorChannels = [
+  "Multifamily Residentials",
+  "HSA's",
+  "Retail",
+  "Construction",
+  "Entertainment",
+  "Events",
+];
+
 export const Route = createFileRoute("/industries/$slug")({
   loader: ({ params }) => {
     const industry = industriesContent.items.find((i) => i.slug === params.slug);
@@ -45,7 +63,7 @@ export const Route = createFileRoute("/industries/$slug")({
 
 function IndustryPage() {
   const { industry } = Route.useLoaderData();
-  const services = servicesContent.items.slice(0, 6);
+  const steps = industry.slug === "security" ? securitySteps : processContent.steps;
   return (
     <>
       <PageHero
@@ -60,14 +78,19 @@ function IndustryPage() {
           align="center"
         />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {processContent.steps.map((step) => (
-            <div key={step.number} className="rounded-2xl border border-border bg-card p-6">
+          {steps.map((step) => (
+            <div
+              key={typeof step === "string" ? step : step.number}
+              className="rounded-2xl border border-border bg-card p-6"
+            >
               <h3 className="font-display text-lg font-semibold text-card-foreground">
-                {step.title}
+                {typeof step === "string" ? step : step.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {step.description}
-              </p>
+              {typeof step === "string" ? null : (
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {step.description}
+                </p>
+              )}
             </div>
           ))}
         </div>
@@ -75,10 +98,9 @@ function IndustryPage() {
       <SectionShell variant="muted">
         <SectionHeader eyebrow="Services" title="Channels we run for this sector" align="center" />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <div key={s.slug} className="rounded-2xl border border-border bg-card p-6">
-              <h3 className="font-display text-lg font-semibold text-card-foreground">{s.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{s.description}</p>
+          {sectorChannels.map((channel) => (
+            <div key={channel} className="rounded-2xl border border-border bg-card p-6">
+              <h3 className="font-display text-lg font-semibold text-card-foreground">{channel}</h3>
             </div>
           ))}
         </div>

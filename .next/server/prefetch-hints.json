@@ -14,10 +14,10 @@
     }
   },
   "/_not-found": {
-    "hints": 0,
+    "hints": 64,
     "slots": {
       "children": {
-        "hints": 64,
+        "hints": 96,
         "slots": {
           "children": {
             "hints": 160,
@@ -41,49 +41,21 @@
       }
     }
   },
+  "/admin": {
+    "hints": 0,
+    "slots": {
+      "children": {
+        "hints": 64,
+        "slots": {
+          "children": {
+            "hints": 160,
+            "slots": null
+          }
+        }
+      }
+    }
+  },
   "/approach": {
-    "hints": 0,
-    "slots": {
-      "children": {
-        "hints": 64,
-        "slots": {
-          "children": {
-            "hints": 160,
-            "slots": null
-          }
-        }
-      }
-    }
-  },
-  "/awards": {
-    "hints": 0,
-    "slots": {
-      "children": {
-        "hints": 64,
-        "slots": {
-          "children": {
-            "hints": 160,
-            "slots": null
-          }
-        }
-      }
-    }
-  },
-  "/blog": {
-    "hints": 0,
-    "slots": {
-      "children": {
-        "hints": 64,
-        "slots": {
-          "children": {
-            "hints": 160,
-            "slots": null
-          }
-        }
-      }
-    }
-  },
-  "/careers": {
     "hints": 0,
     "slots": {
       "children": {
@@ -125,20 +97,6 @@
       }
     }
   },
-  "/data-studies": {
-    "hints": 0,
-    "slots": {
-      "children": {
-        "hints": 64,
-        "slots": {
-          "children": {
-            "hints": 160,
-            "slots": null
-          }
-        }
-      }
-    }
-  },
   "/industries": {
     "hints": 0,
     "slots": {
@@ -162,35 +120,7 @@
       }
     }
   },
-  "/podcasts": {
-    "hints": 0,
-    "slots": {
-      "children": {
-        "hints": 64,
-        "slots": {
-          "children": {
-            "hints": 160,
-            "slots": null
-          }
-        }
-      }
-    }
-  },
   "/pricing": {
-    "hints": 0,
-    "slots": {
-      "children": {
-        "hints": 64,
-        "slots": {
-          "children": {
-            "hints": 160,
-            "slots": null
-          }
-        }
-      }
-    }
-  },
-  "/resources": {
     "hints": 0,
     "slots": {
       "children": {

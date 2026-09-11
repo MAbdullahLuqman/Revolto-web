@@ -26,18 +26,24 @@ const yourPart = [
 const funnel = [
   {
     label: "Leads",
-    value: "Up to 18,000* prospects within your client profile",
+    value: "Up to 18,000* prospects within your prospect profile",
     w: "100%",
     accent: true,
   },
   { label: "MQLs", value: "Up to 9,000* marketing-qualified leads", w: "88%", accent: false },
   {
     label: "SQLs",
-    value: "200* sales-qualified meetings with decision-makers",
+    value: "200+* qualified meetings with decision-makers",
     w: "74%",
     accent: false,
   },
-  { label: "Opportunities", value: "10-30* closed deals", w: "60%", accent: false },
+  {
+    label: "Revenue",
+    value: "$1M+* revenue generated",
+    note: "10-30 converted deals",
+    w: "60%",
+    accent: false,
+  },
 ];
 
 function Accordion({ items, label }: { items: { title: string; body: string }[]; label: string }) {
@@ -124,6 +130,11 @@ export function PipelineSection() {
                   >
                     <p className="max-w-xs font-display text-base font-semibold leading-snug md:text-lg">
                       {step.value}
+                      {"note" in step ? (
+                        <span className="mt-2 block font-sans text-xs font-medium text-muted-foreground">
+                          {step.note}
+                        </span>
+                      ) : null}
                     </p>
                   </div>
                   {i < funnel.length - 1 ? <div className="h-3" /> : null}

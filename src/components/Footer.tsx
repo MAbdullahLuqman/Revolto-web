@@ -30,7 +30,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Logo />
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
@@ -41,11 +41,6 @@ export function Footer() {
               <p>
                 <a href={`mailto:${site.email}`} className="hover:text-foreground">
                   {site.email}
-                </a>
-              </p>
-              <p>
-                <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="hover:text-foreground">
-                  {site.phone}
                 </a>
               </p>
             </div>
@@ -82,17 +77,6 @@ export function Footer() {
               {nav.company.map((c) => (
                 <li key={c.to}>
                   <FooterLink to={c.to}>{c.title}</FooterLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-3 text-sm font-semibold text-foreground">Resources</h3>
-            <ul className="space-y-2">
-              {nav.resources.slice(0, 5).map((r) => (
-                <li key={r.to}>
-                  <FooterLink to={r.to}>{r.title}</FooterLink>
                 </li>
               ))}
             </ul>
