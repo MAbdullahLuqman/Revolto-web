@@ -22,6 +22,25 @@ function ContactPage() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
+  const [step, setStep] = useState(0);
+  const [lead, setLead] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    website: "",
+    message: "",
+  });
+  const setField = (name: keyof typeof lead, value: string) =>
+    setLead((current) => ({ ...current, [name]: value }));
+  const canContinue =
+    step === 0
+      ? lead.firstName.trim() && lead.lastName.trim()
+      : step === 1
+        ? lead.email.trim()
+        : step === 2
+          ? lead.company.trim()
+          : lead.message.trim();
 
   return (
     <SectionShell>
@@ -57,12 +76,13 @@ function ContactPage() {
             </div>
           ) : (
             <form
-              className="space-y-4"
+              className="space-y-6"
               onSubmit={async (e) => {
                 e.preventDefault();
                 setError("");
                 setSending(true);
-                const form = new FormData(e.currentTarget);
+                const form = new FormData();
+                Object.entries(lead).forEach(([name, value]) => form.set(name, value));
                 try {
                   const response = await fetch("/api/leads", {
                     method: "POST",
@@ -77,28 +97,129 @@ function ContactPage() {
                 }
               }}
             >
-              <div className="grid gap-4 sm:grid-cols-2">
-                <input className={inputClass} name="firstName" placeholder="First name" required />
-                <input className={inputClass} name="lastName" placeholder="Last name" required />
+              <div className="flex gap-2">
+                {[0, 1, 2, 3].map((item) => (
+                  <span
+                    key={item}
+                    className={`h-1 flex-1 rounded-full ${item <= step ? "bg-accent-orange" : "bg-border"}`}
+                  />
+                ))}
               </div>
-              <input
-                className={inputClass}
-                type="email"
-                name="email"
-                placeholder="Work email"
-                required
-              />
-              <input className={inputClass} name="company" placeholder="Company" required />
-              <input className={inputClass} name="website" placeholder="Company website" />
-              <textarea
-                className={`${inputClass} min-h-32`}
-                name="message"
-                placeholder="Which prospects, accounts, and pipeline goals matter?"
-                required
-              />
-              <Button type="submit" size="lg" className="w-full">
-                {sending ? "Sending..." : "Get a quote"}
-              </Button>
+
+              {step === 0 ? (
+                <div className="space-y-4">
+                  <p className="font-display text-2xl font-semibold text-card-foreground">
+                    What's your name?
+                  </p>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <input
+                      className={inputClass}
+                      name="firstName"
+                      placeholder="First name"
+                      value={lead.firstName}
+                      onChange={(e) => setField("firstName", e.target.value)}
+                      required
+                    />
+                    <input
+                      className={inputClass}
+                      name="lastName"
+                      placeholder="Last name"
+                      value={lead.lastName}
+                      onChange={(e) => setField("lastName", e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+              ) : null}
+
+              {step === 1 ? (
+                <div className="space-y-4">
+                  <p className="font-display text-2xl font-semibold text-card-foreground">
+                    Where should we reply?
+                  </p>
+                  <input
+                    className={inputClass}
+                    type="email"
+                    name="email"
+                    placeholder="Work email"
+                    value={lead.email}
+                    onChange={(e) => setField("email", e.target.value)}
+                    required
+                  />
+                </div>
+              ) : null}
+
+              {step === 2 ? (
+                <div className="space-y-4">
+                  <p className="font-display text-2xl font-semibold text-card-foreground">
+                    Which company is this for?
+                  </p>
+                  <input
+                    className={inputClass}
+                    name="company"
+                    placeholder="Company"
+                    value={lead.company}
+                    onChange={(e) => setField("company", e.target.value)}
+                    required
+                  />
+                  <input
+                    className={inputClass}
+                    name="website"
+                    placeholder="Company website"
+                    value={lead.website}
+                    onChange={(e) => setField("website", e.target.value)}
+                  />
+                </div>
+              ) : null}
+
+              {step === 3 ? (
+                <div className="space-y-4">
+                  <p className="font-display text-2xl font-semibold text-card-foreground">
+                    What kind of leads do you need?
+                  </p>
+                  <textarea
+                    className={`${inputClass} min-h-32`}
+                    name="message"
+                    placeholder="Tell us your prospects, target accounts, and pipeline goals."
+                    value={lead.message}
+                    onChange={(e) => setField("message", e.target.value)}
+                    required
+                  />
+                </div>
+              ) : null}
+
+              <div className="flex gap-3">
+                {step > 0 ? (
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="lg"
+                    onClick={() => setStep(step - 1)}
+                  >
+                    Back
+                  </Button>
+                ) : null}
+                {step < 3 ? (
+                  <Button
+                    type="button"
+                    size="lg"
+                    className="flex-1"
+                    disabled={!canContinue}
+                    onClick={() => setStep(step + 1)}
+                  >
+                    Continue
+                  </Button>
+                ) : (
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="flex-1"
+                    disabled={!canContinue || sending}
+                  >
+                    {sending ? "Sending..." : "Get a quote"}
+                  </Button>
+                )}
+              </div>
               {error ? <p className="text-sm text-red-600">{error}</p> : null}
               <p className="text-xs text-muted-foreground">
                 By submitting you agree to our privacy policy.
