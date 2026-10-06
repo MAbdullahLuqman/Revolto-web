@@ -91,7 +91,7 @@ function ContactPage() {
                   if (!response.ok) throw new Error("Failed to save lead");
                   setSent(true);
                 } catch {
-                  setError("Could not save your request. Please email us directly.");
+                  setError("Could not send your request. Please email us directly.");
                 } finally {
                   setSending(false);
                 }

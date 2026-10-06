@@ -33,11 +33,22 @@ export default function AdminPage() {
     if (!token) return;
     fetch("/api/leads", { headers: { Authorization: `Bearer ${token}` } })
       .then((response) => {
-        if (!response.ok) throw new Error("Failed to load leads");
+        if (response.status === 401 || response.status === 403) {
+          localStorage.removeItem("adminToken");
+          setToken("");
+          throw new Error("Session expired");
+        }
+        if (!response.ok) {
+          return response.json().then((data: { error?: string }) => {
+            throw new Error(data.error || "Failed to load leads");
+          });
+        }
         return response.json() as Promise<{ leads: Lead[] }>;
       })
       .then((data) => setLeads(data.leads))
-      .catch(() => setError("Could not load leads."));
+      .catch((error: unknown) =>
+        setError(error instanceof Error ? error.message : "Could not load leads."),
+      );
   }, [token]);
 
   async function login(e: React.FormEvent<HTMLFormElement>) {
@@ -60,6 +71,20 @@ export default function AdminPage() {
     } catch {
       setError("Login failed.");
     }
+  }
+
+  async function deleteLead(id: string) {
+    if (!window.confirm("Delete this lead?")) return;
+    setError("");
+    const response = await fetch(`/api/leads?id=${encodeURIComponent(id)}`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (!response.ok) {
+      setError("Could not delete lead.");
+      return;
+    }
+    setLeads((current) => current.filter((lead) => lead.id !== id));
   }
 
   if (loading) return <SectionShell>Loading...</SectionShell>;
@@ -110,37 +135,28 @@ export default function AdminPage() {
         </Button>
       </div>
       {error ? <p className="mb-4 text-sm text-red-600">{error}</p> : null}
-      <div className="space-y-4">
-        {leads.map((lead) => (
-          <article key={lead.id} className="rounded-2xl border border-border bg-card p-6">
-            <div className="flex flex-wrap items-start justify-between gap-4">
-              <div>
-                <h2 className="font-display text-xl font-semibold text-card-foreground">
-                  {[lead.firstName, lead.lastName].filter(Boolean).join(" ") || "Unnamed lead"}
-                </h2>
-                <p className="mt-1 text-sm text-muted-foreground">{lead.company}</p>
-              </div>
-              <p className="text-xs text-muted-foreground">
-                {lead.createdAt ? new Date(lead.createdAt).toLocaleString() : "New"}
-              </p>
-            </div>
-            <div className="mt-4 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
-              <a className="hover:text-foreground" href={`mailto:${lead.email}`}>
-                {lead.email}
-              </a>
-              {lead.website ? (
-                <a className="hover:text-foreground" href={lead.website}>
-                  {lead.website}
-                </a>
-              ) : null}
-            </div>
-            <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-foreground/80">
-              {lead.message}
-            </p>
-          </article>
-        ))}
-        {!leads.length ? <p className="text-muted-foreground">No leads yet.</p> : null}
-      </div>
+      {leads.length ? (
+        <div className="overflow-x-auto rounded-2xl border border-border bg-card">
+          <table className="w-full min-w-[850px] text-left text-sm">
+            <thead className="border-b border-border text-muted-foreground">
+              <tr>{["Name", "Email", "Company", "Website", "Message", "Received", ""].map((label) => <th key={label} className="px-4 py-3 font-medium">{label}</th>)}</tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {leads.map((lead) => (
+                <tr key={lead.id} className="align-top">
+                  <td className="px-4 py-4 font-medium text-card-foreground">{[lead.firstName, lead.lastName].filter(Boolean).join(" ") || "Unnamed lead"}</td>
+                  <td className="px-4 py-4"><a className="hover:text-foreground" href={`mailto:${lead.email}`}>{lead.email}</a></td>
+                  <td className="px-4 py-4">{lead.company}</td>
+                  <td className="px-4 py-4">{lead.website ? <a className="hover:text-foreground" href={lead.website}>{lead.website}</a> : "—"}</td>
+                  <td className="max-w-sm whitespace-pre-wrap px-4 py-4">{lead.message}</td>
+                  <td className="whitespace-nowrap px-4 py-4">{lead.createdAt ? new Date(lead.createdAt).toLocaleString() : "New"}</td>
+                  <td className="px-4 py-4"><Button variant="outline" onClick={() => void deleteLead(lead.id)}>Delete</Button></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : <p className="text-muted-foreground">No leads yet.</p>}
     </SectionShell>
   );
 }

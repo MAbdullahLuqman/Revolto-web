@@ -26,7 +26,10 @@ export async function POST(request: Request) {
     }),
   });
 
-  if (!response.ok) return Response.json({ error: "Could not save lead" }, { status: 500 });
+  if (!response.ok) {
+    console.error("Could not save lead", await response.text());
+    return Response.json({ error: "Could not save lead" }, { status: 500 });
+  }
 
   await sendLeadEmail(lead);
 
@@ -41,13 +44,37 @@ export async function GET(request: Request) {
     headers: { Authorization: token },
   });
 
-  if (!response.ok) return Response.json({ error: "Could not load leads" }, { status: 500 });
+  if (!response.ok) {
+    const details = await response.text();
+    console.error("Could not load leads", details);
+    return Response.json(
+      { error: details || "Could not load leads" },
+      { status: response.status },
+    );
+  }
 
   const data = (await response.json()) as {
     documents?: { name: string; fields?: Parameters<typeof leadFromFirestore>[0]["fields"] }[];
   };
 
   return Response.json({ leads: (data.documents ?? []).map(leadFromFirestore) });
+}
+
+export async function DELETE(request: Request) {
+  const token = request.headers.get("authorization");
+  const id = new URL(request.url).searchParams.get("id");
+  if (!token) return Response.json({ error: "Unauthorized" }, { status: 401 });
+  if (!id || id.includes("/")) return Response.json({ error: "Invalid lead id" }, { status: 400 });
+
+  const response = await fetch(firestoreUrl(`leads/${encodeURIComponent(id)}`), {
+    method: "DELETE",
+    headers: { Authorization: token },
+  });
+  if (!response.ok) {
+    console.error("Could not delete lead", await response.text());
+    return Response.json({ error: "Could not delete lead" }, { status: response.status });
+  }
+  return Response.json({ ok: true });
 }
 
 function text(value: FormDataEntryValue | null) {
@@ -91,10 +118,11 @@ async function sendLeadEmail(lead: {
       reply_to: lead.email || undefined,
       subject: `New lead from ${name}`,
       text: body,
+      html: `<pre>${body.replace(/[&<>]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[char] ?? char)}</pre>`,
     }),
   });
 
   if (!response.ok) {
-    console.error("Could not send lead email", await response.text());
+    throw new Error(`Could not send lead email: ${await response.text()}`);
   }
 }
