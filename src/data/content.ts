@@ -2,22 +2,15 @@ export const homeContent = {
   eyebrow: "LEAD GENERATION SERVICES",
   headline: "Connect with the right prospects at the right time",
   subheadline:
-    "Rovolto helps companies grow with high-quality leads through targeted email marketing, LinkedIn outreach, InMail campaigns, and Sales Navigator strategies powered by Apollo data.",
+    "Reach the right decision makers through targeted outreach, appointment setting, and social media marketing. Rovolto helps you create new business opportunities and support your next stage of growth.",
   cta: "Get a quote",
-  trustLine:
-    "Companies use Rovolto to reach the right prospects through clean targeting and managed outreach",
-  stats: [
-    { value: "18k", label: "Profile-fit prospects mapped yearly" },
-    { value: "9k", label: "Marketing-qualified contacts filtered" },
-    { value: "200+", label: "Qualified meetings" },
-    { value: "$1M+", label: "Revenue generated", note: "10-30 converted deals" },
-  ],
+  trustLine: "Targeted outreach shaped around your buyers, market, and growth goals",
 } as const;
 
 export const servicesContent = {
   title: "Lead generation services for modern B2B sales",
   description:
-    "We help firms grow through targeted email marketing, LinkedIn outreach, InMail campaigns, Sales Navigator strategies, and Apollo-backed account data.",
+    "We help B2B firms create new opportunities through targeted outreach, appointment setting, managed sales development, and social media marketing.",
   items: [
     {
       slug: "security-contacts",
@@ -30,63 +23,70 @@ export const servicesContent = {
       slug: "startup-lead-generation",
       title: "Startup lead generation",
       description:
-        "Founder-friendly GTM sprints that help early-stage teams land first customers and prove repeatable demand.",
+        "Focused outreach that helps early-stage teams test a buyer profile, gather market feedback, and plan next steps.",
       icon: "rocket",
     },
     {
       slug: "email-marketing",
       title: "Email marketing",
       description:
-        "Targeted email campaigns with clean lists, clear messaging, deliverability basics, and reply-focused follow-up.",
+        "Targeted business email outreach with audience and message agreed around your campaign goals.",
       icon: "mail",
+    },
+    {
+      slug: "social-media-marketing",
+      title: "Social Media Marketing",
+      description:
+        "Build a consistent social presence aligned with your audience, business goals, and sales activity.",
+      icon: "linkedin",
     },
     {
       slug: "appointment-setting",
       title: "Appointment setting",
       description:
-        "Research, outreach, qualification, and calendar booking with the right prospects at the right time.",
+        "Coordinate outreach and meeting bookings around qualification criteria and handoff rules agreed with your team.",
       icon: "calendar",
     },
     {
       slug: "cold-email-outreach",
       title: "Cold email outreach",
       description:
-        "Multi-step sequences written for your buyer, validated by data, and optimized for reply rates and meeting bookings.",
+        "Targeting and email messages planned around your buyer profile, offer, and agreed campaign scope.",
       icon: "mail",
     },
     {
       slug: "linkedin-sales-navigator-outreach",
       title: "LinkedIn outreach and Sales Navigator",
       description:
-        "Connection outreach, InMail campaigns, saved searches, lead lists, account tracking, and Sales Navigator cleanup.",
+        "Use Sales Navigator for account research; connection outreach, InMail, and campaign management are scoped separately.",
       icon: "linkedin",
     },
     {
       slug: "account-management",
       title: "Account management",
       description:
-        "Weekly reporting, contact quality review, campaign priorities, and clear next actions for every target account.",
+        "Agree campaign coordination, progress updates, and contact review responsibilities for your engagement.",
       icon: "briefcase",
     },
     {
       slug: "sales-development",
       title: "Sales development",
       description:
-        "We design, run, and iterate the top-of-funnel motion that feeds qualified conversations to closers.",
+        "Support prospecting and early sales conversations with a handoff to your sales team based on agreed criteria.",
       icon: "trending-up",
     },
     {
       slug: "enterprise-lead-generation",
       title: "Enterprise lead generation",
       description:
-        "Complex sales cycles, multiple stakeholders, and rigorous compliance for Fortune 500 and mid-market targets.",
+        "Map relevant buying roles and coordinate outreach for larger accounts with multiple stakeholders and longer sales processes.",
       icon: "building",
     },
     {
       slug: "smb-lead-generation",
       title: "SMB lead generation",
       description:
-        "High-volume, cost-efficient outbound that reaches small-business decision makers at scale.",
+        "Targeting clarified around whether your company or your intended buyers are small and medium-sized businesses.",
       icon: "store",
     },
   ],
@@ -105,19 +105,19 @@ export const processContent = {
       number: "02",
       title: "Verify",
       description:
-        "Apollo, Sales Navigator, email checks, and manual review keep lists clean before they enter campaigns.",
+        "Apollo and Sales Navigator can support account research and data checks where appropriate for the campaign.",
     },
     {
       number: "03",
       title: "Launch",
       description:
-        "Campaigns go live across email, phone, and LinkedIn with strict quality controls and daily activity tracking.",
+        "Agreed outreach begins with the selected channels, target criteria, and messaging for your campaign.",
     },
     {
       number: "04",
       title: "Optimize",
       description:
-        "Weekly account management, reporting, and list refinements keep contact quality and pipeline value moving.",
+        "Campaign reviews and list refinements help keep targeting aligned with your agreed buyer profile.",
     },
   ],
 } as const;
@@ -125,13 +125,13 @@ export const processContent = {
 export const industriesContent = {
   title: "Industry-focused outreach",
   description:
-    "We adapt tone, timing, and targeting to the sectors where you sell. Security is first because clean technical buyer data drives the rest of the campaign.",
+    "We adapt targeting and messaging to the businesses and decision makers you want to reach, across security, retail, and other B2B sectors.",
   items: [
     {
       slug: "security",
       title: "Security",
       description:
-        "Reach property managers, construction managers, security leaders, and procurement buyers with verified contact data.",
+        "Help security businesses reach property, facilities, construction, and procurement decision makers with relevant outreach.",
     },
     {
       slug: "construction",
@@ -149,7 +149,7 @@ export const industriesContent = {
       slug: "finance",
       title: "Finance",
       description:
-        "Target banks, insurers, fintechs, and asset managers with compliance-aware outreach and precise stakeholder mapping.",
+        "Target relevant decision makers in banks, insurers, fintechs, and asset managers with messaging shaped to your offer.",
     },
     {
       slug: "manufacturing",
@@ -161,7 +161,7 @@ export const industriesContent = {
       slug: "retail",
       title: "Retail",
       description:
-        "Reach retail operators, property teams, and regional managers with clean targeting and direct outreach.",
+        "Plan outreach around retail relationships and the buyers relevant to your product or service.",
     },
   ],
 } as const;
@@ -250,28 +250,5 @@ export const testimonials = [
     name: "Sarah Whitfield",
     role: "CMO",
     company: "CoreLedger",
-  },
-] as const;
-
-export const faqContent = [
-  {
-    question: "How quickly can Rovolto start generating meetings?",
-    answer:
-      "Most campaigns see the first qualified conversations within 3-4 weeks. Ramp depends on account fit, contact data quality, ICP clarity, and calendar availability.",
-  },
-  {
-    question: "Do you manage Apollo and Sales Navigator?",
-    answer:
-      "Yes. We manage Apollo lists, enrichment, segmentation, sequence hygiene, Sales Navigator searches, and weekly contact-quality reviews.",
-  },
-  {
-    question: "Which channels do you use?",
-    answer:
-      "We run cold email, cold calling, LinkedIn outreach, and account-based marketing campaigns. The mix is tailored to your ICP and market.",
-  },
-  {
-    question: "How do you measure success?",
-    answer:
-      "Primary metrics are qualified meetings booked, pipeline value created, cost per meeting, and meeting-to-opportunity conversion. Reporting is shared weekly.",
   },
 ] as const;

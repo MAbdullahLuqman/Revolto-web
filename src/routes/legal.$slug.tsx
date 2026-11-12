@@ -15,19 +15,15 @@ const legalPages: Record<
     sections: [
       {
         title: "Data we collect",
-        body: "Contact details you submit through our forms, business contact data used for outreach, and standard analytics data such as pages viewed and device type.",
+        body: "Rovolto receives the contact details you submit through the enquiry form. Business contact details may also be used when they are part of an agreed outreach service.",
       },
       {
         title: "How we use data",
-        body: "To respond to enquiries, deliver contracted services, improve our website, and meet legal obligations. We do not sell personal data.",
-      },
-      {
-        title: "Legal basis",
-        body: "We rely on legitimate interest for B2B communications and consent where required by applicable law.",
+        body: "Contact details may be used to respond to enquiries and deliver agreed services.",
       },
       {
         title: "Your rights",
-        body: `You can request access, correction, or deletion of your data at any time by emailing ${site.email}.`,
+        body: `Contact ${site.email} to ask about personal data or request access, correction, or deletion where applicable.`,
       },
     ],
   },
@@ -41,33 +37,25 @@ const legalPages: Record<
       },
       {
         title: "Use of content",
-        body: "All content is owned by Rovolto and provided for informational purposes. Reproduction without permission is not permitted.",
+        body: "Website content is provided for general information. Reproduction requires permission from the relevant rights holder.",
       },
       {
         title: "No warranty",
         body: "Content is provided as is. Results described in case studies depend on many factors and are not guaranteed.",
       },
       {
-        title: "Governing law",
-        body: "These terms are governed by the laws of the jurisdiction in which Rovolto is incorporated.",
+        title: "Engagement terms",
+        body: "Service scope, responsibilities, fees, and any additional terms should be agreed in the relevant engagement documents.",
       },
     ],
   },
   "cookie-policy": {
     title: "Cookie policy",
-    intro: "How and why we use cookies on rovolto.com.",
+    intro: "Information about cookies and similar technologies on the Rovolto website.",
     sections: [
       {
         title: "Essential cookies",
-        body: "Required for the site to function, such as security and session handling.",
-      },
-      {
-        title: "Analytics cookies",
-        body: "Help us understand which pages are useful so we can improve content and navigation.",
-      },
-      {
-        title: "Marketing cookies",
-        body: "Used to measure the performance of our campaigns. These are only set with your consent.",
+        body: "Cookies may support functions required for a website to operate. Optional analytics and marketing cookies are not documented in the current project materials.",
       },
       {
         title: "Managing cookies",
@@ -79,18 +67,21 @@ const legalPages: Record<
     title: "Accessibility statement",
     intro: "Our commitment to an accessible web experience.",
     sections: [
-      { title: "Standard", body: "We aim to meet WCAG 2.1 AA across the Rovolto website." },
+      {
+        title: "Accessibility",
+        body: "Rovolto aims to make this website accessible and welcomes reports about barriers.",
+      },
       {
         title: "Ongoing work",
-        body: "We test colour contrast, keyboard navigation, and screen reader labelling as part of our release process.",
+        body: "Keyboard navigation, readable contrast, and control labels are areas for ongoing review.",
       },
       {
         title: "Known limitations",
-        body: "Some embedded third-party media may not fully meet our standard. We work with vendors to improve this.",
+        body: "Rovolto welcomes reports about accessibility barriers on this website.",
       },
       {
         title: "Feedback",
-        body: `If you encounter a barrier, email ${site.email} and we will respond promptly.`,
+        body: `If you encounter a barrier, email ${site.email}.`,
       },
     ],
   },
@@ -100,17 +91,9 @@ const legalPages: Record<
     sections: [
       {
         title: "Our position",
-        body: "Rovolto has zero tolerance for modern slavery or human trafficking in our business or supply chain.",
+        body: "Rovolto opposes modern slavery and human trafficking.",
       },
-      {
-        title: "Our people",
-        body: "All team members are engaged under fair contracts with transparent pay and working conditions.",
-      },
-      {
-        title: "Suppliers",
-        body: "We expect suppliers and partners to uphold equivalent standards and reserve the right to terminate relationships that do not.",
-      },
-      { title: "Reporting", body: `Concerns can be raised confidentially at ${site.email}.` },
+      { title: "Reporting", body: `Concerns can be raised at ${site.email}.` },
     ],
   },
 };

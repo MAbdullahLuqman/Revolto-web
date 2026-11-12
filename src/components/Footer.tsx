@@ -34,8 +34,8 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Logo />
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              Rovolto helps companies grow with high-quality leads through targeted email marketing,
-              LinkedIn outreach, InMail campaigns, Sales Navigator strategies, and Apollo data.
+              Rovolto supports B2B growth through targeted outreach, appointment setting, and social
+              media marketing.
             </p>
             <div className="mt-6 space-y-1 text-sm text-muted-foreground">
               <p>
@@ -49,7 +49,7 @@ export function Footer() {
           <div>
             <h3 className="mb-3 text-sm font-semibold text-foreground">Services</h3>
             <ul className="space-y-2">
-              {nav.services.slice(0, 6).map((s) => (
+              {nav.services.slice(0, 7).map((s) => (
                 <li key={s.to}>
                   <FooterLink to={s.to}>{s.title}</FooterLink>
                 </li>

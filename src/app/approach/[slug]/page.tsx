@@ -1,10 +1,9 @@
-"use client";
+import { notFound } from "next/navigation";
+import { approachDetails } from "@/data/approach";
+import ClientPage from "./client-page";
 
-import { useParams } from "next/navigation";
-import { Route } from "@/routes/approach.$slug";
-import { RouteRenderer } from "@/lib/router-compat";
-
-export default function Page() {
-  const { slug } = useParams<{ slug: string }>();
-  return <RouteRenderer route={Route} params={{ slug }} />;
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  if (!approachDetails.some((detail) => detail.slug === slug)) notFound();
+  return <ClientPage slug={slug} />;
 }

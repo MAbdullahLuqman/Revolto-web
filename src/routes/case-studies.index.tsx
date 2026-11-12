@@ -20,8 +20,8 @@ function CaseStudiesIndex() {
     <>
       <PageHero
         eyebrow="Case studies & testimonials"
-        title="Pipeline our prospects can forecast"
-        description="Detailed outbound results and feedback from the sales and marketing leaders who trust us with their pipeline."
+        title="Documented responses from outreach"
+        description="Examples of prospect replies, requests, and meeting interest recorded in the available correspondence."
       />
       <SectionShell>
         <div className="grid gap-6 md:grid-cols-3">
@@ -34,10 +34,13 @@ function CaseStudiesIndex() {
             >
               <img
                 src={c.image}
-                alt=""
-                className="mb-5 aspect-[4/3] w-full rounded-xl border border-border object-cover object-top"
+                alt={`Redacted correspondence for ${c.title}`}
+                className="mb-5 aspect-[4/3] w-full rounded-xl border border-border bg-muted object-contain object-top"
               />
               <p className="font-display text-3xl font-bold text-accent-orange">{c.metric}</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Context in the prospect request, not revenue
+              </p>
               <h2 className="mt-3 font-display text-lg font-semibold text-card-foreground">
                 {c.title}
               </h2>
@@ -51,11 +54,7 @@ function CaseStudiesIndex() {
         </div>
       </SectionShell>
       <SectionShell variant="muted">
-        <SectionHeader
-          eyebrow="Testimonials"
-          title="What prospects say about Rovolto"
-          align="center"
-        />
+        <SectionHeader eyebrow="Testimonials" title="Client feedback" align="center" />
         <div id="testimonials" className="grid gap-6 md:grid-cols-3">
           {testimonials.map((t) => (
             <div key={t.name} className="rounded-2xl border border-border bg-card p-8">

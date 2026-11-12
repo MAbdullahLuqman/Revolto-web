@@ -10,23 +10,23 @@ export const approachDetails: ApproachDetail[] = [
     slug: "sdr",
     title: "SDR execution",
     description:
-      "Dedicated sales development reps who run your outreach, qualify replies, and book meetings.",
+      "Sales development responsibilities agreed around your target buyers, outreach plan, and sales handoff.",
     points: [
       {
-        title: "Dedicated pods",
-        body: "A named SDR team assigned to your market, brand, and calendar — never a shared queue.",
+        title: "Responsibilities",
+        body: "The people, activities, and level of account focus are described in the agreed engagement scope.",
       },
       {
-        title: "Daily activity standards",
-        body: "Defined dial, email, and LinkedIn volumes with QA on every conversation.",
+        title: "Outreach activity",
+        body: "Channels, activity expectations, and quality review are agreed before work starts.",
       },
       {
         title: "Qualification criteria",
-        body: "We agree on BANT-style criteria up front so only real opportunities reach your AEs.",
+        body: "Agree what makes a relevant response or meeting and how it should be handed to your sales team.",
       },
       {
-        title: "Weekly coaching",
-        body: "Call reviews and messaging updates keep performance improving throughout the engagement.",
+        title: "Ongoing review",
+        body: "Review timing and adjustments are set with your team as part of the engagement.",
       },
     ],
   },
@@ -34,92 +34,93 @@ export const approachDetails: ApproachDetail[] = [
     slug: "research",
     title: "Research",
     description:
-      "Account universes, verified contacts, and buying signals that make every touch relevant.",
+      "Define relevant accounts, contact roles, and research criteria before outreach begins.",
     points: [
       {
         title: "ICP definition",
         body: "Firmographics, technographics, and trigger events that define who is worth contacting.",
       },
       {
-        title: "Manual verification",
-        body: "Every contact is checked by a human researcher before it enters a sequence.",
+        title: "Contact data",
+        body: "Agree data sources and any verification work required for your campaign.",
       },
       {
         title: "Org mapping",
-        body: "We map the buying committee so outreach reaches influencers and economic buyers.",
+        body: "Map relevant stakeholder roles when a campaign needs to reach more than one buyer.",
       },
       {
-        title: "Signal monitoring",
-        body: "Funding, hiring, tech changes, and leadership moves trigger timely outreach.",
+        title: "Buying context",
+        body: "Use relevant account context where it is available and appropriate for the campaign.",
       },
     ],
   },
   {
     slug: "content",
     title: "Content",
-    description: "Sequences, call scripts, and follow-up assets written for skeptical B2B buyers.",
+    description: "Messaging developed around your offer, buyer, and agreed outreach channels.",
     points: [
       {
         title: "Message testing",
-        body: "Multiple angles run in parallel so we learn which pain point resonates fastest.",
+        body: "Message variations can be agreed when testing is part of the campaign scope.",
       },
       {
         title: "Personalization tiers",
-        body: "Deep personalization for tier-one accounts, smart templating for volume segments.",
+        body: "The level of personalization is set around account priorities and available research.",
       },
       {
         title: "Objection libraries",
-        body: "Documented responses to the objections your market actually raises.",
+        body: "Plan how your team wants common prospect questions and replies handled.",
       },
       {
-        title: "Sales collateral",
-        body: "One-pagers and follow-up emails that keep momentum after the first meeting.",
+        title: "Agreed assets",
+        body: "Any additional sales materials or follow-up assets are confirmed before they are included.",
       },
     ],
   },
   {
     slug: "deliverability",
     title: "Deliverability",
-    description: "Infrastructure and reputation management that keep your emails in the inbox.",
+    description:
+      "Discuss sending setup and email health responsibilities when cold email is in scope.",
     points: [
       {
         title: "Domain strategy",
-        body: "Separate sending domains protect your primary domain reputation.",
+        body: "Confirm which sending domains and infrastructure are available and in scope.",
       },
       {
         title: "Authentication",
-        body: "SPF, DKIM, and DMARC configured and monitored from day one.",
+        body: "Authentication setup responsibilities are agreed before email activity begins.",
       },
       {
         title: "Warm-up and pacing",
-        body: "Gradual volume ramps and per-mailbox limits prevent spam placement.",
+        body: "Sending practices and limits depend on the agreed infrastructure and campaign plan.",
       },
       {
         title: "Ongoing monitoring",
-        body: "Placement tests, blocklist checks, and bounce analysis every week.",
+        body: "Any monitoring and reporting included in the engagement is confirmed in its scope.",
       },
     ],
   },
   {
     slug: "account-management",
     title: "Account management",
-    description: "A single point of contact who owns strategy, reporting, and results.",
+    description: "Coordination and reporting responsibilities agreed for a specific engagement.",
     points: [
       {
-        title: "Weekly reporting",
-        body: "Meetings booked, pipeline value, reply quality, and next-week priorities.",
+        title: "Progress updates",
+        body: "Reporting cadence and measures are agreed with your team and reflect documented activity and responses.",
       },
       {
-        title: "Quarterly strategy",
-        body: "Segment expansion, offer testing, and channel mix reviews every quarter.",
+        title: "Campaign reviews",
+        body: "Review timing and any changes to segments, messaging, or channels are agreed as part of the work.",
       },
       {
-        title: "CRM integration",
-        body: "Activity and outcomes sync into your CRM so forecasting stays accurate.",
+        title: "Systems and records",
+        body: "CRM access or integrations are included only when they are confirmed in the scope.",
       },
       {
         title: "Escalation path",
-        body: "Direct access to leadership whenever priorities or targets change.",
+        body: "Agree who to contact when priorities, targets, or campaign responsibilities change.",
       },
     ],
   },

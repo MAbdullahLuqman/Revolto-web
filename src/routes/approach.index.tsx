@@ -21,7 +21,7 @@ function ApproachIndex() {
       <PageHero
         eyebrow="Approach"
         title={processContent.title}
-        description="A four-stage method that turns market research into booked meetings — and keeps improving every week."
+        description="A clear process for agreeing target buyers, preparing outreach, and reviewing responses with your team."
       />
       <SectionShell>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -39,11 +39,7 @@ function ApproachIndex() {
         </div>
       </SectionShell>
       <SectionShell variant="muted">
-        <SectionHeader
-          eyebrow="Disciplines"
-          title="The teams behind every campaign"
-          align="center"
-        />
+        <SectionHeader eyebrow="Disciplines" title="The work behind each campaign" align="center" />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {approachDetails.map((a) => (
             <Link

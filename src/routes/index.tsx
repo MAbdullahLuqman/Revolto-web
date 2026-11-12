@@ -55,8 +55,7 @@ export const Route = createFileRoute("/")({
       { title: "Rovolto — B2B Lead Generation Agency" },
       {
         name: "description",
-        content:
-          "Rovolto helps companies grow with targeted email marketing, LinkedIn outreach, InMail campaigns, Sales Navigator strategies, and Apollo data.",
+        content: homeContent.subheadline,
       },
       {
         property: "og:title",
@@ -64,8 +63,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:description",
-        content:
-          "Rovolto helps companies grow with targeted email marketing, LinkedIn outreach, InMail campaigns, Sales Navigator strategies, and Apollo data.",
+        content: homeContent.subheadline,
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -78,11 +76,11 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <Stats />
       <Services />
       <PipelineSection />
       <Process />
       <Industries />
+      <GeographicCoverage />
       <CaseStudies />
       <Testimonials />
       <CTA />
@@ -169,22 +167,26 @@ function Hero() {
   );
 }
 
-function Stats() {
+function GeographicCoverage() {
+  const regions = ["United States", "United Kingdom", "Europe", "Oceania", "Asia", "Worldwide"];
   return (
     <SectionShell variant="muted">
-      <Stagger className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-        {homeContent.stats.map((stat) => (
-          <StaggerItem key={stat.label} className="text-center">
-            <p className="font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-              {stat.value}
-            </p>
-            <p className="mt-3 text-sm text-muted-foreground">{stat.label}</p>
-            {"note" in stat ? (
-              <p className="mt-1 text-xs text-muted-foreground">{stat.note}</p>
-            ) : null}
-          </StaggerItem>
+      <SectionHeader
+        eyebrow="Markets"
+        title="Outreach for the markets you want to grow in"
+        description="Rovolto can support outreach and business expansion across these markets. Targeting and messaging are shaped around your chosen geography, buyer profile, and goals."
+        align="center"
+      />
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {regions.map((region) => (
+          <div
+            key={region}
+            className="rounded-2xl border border-border bg-card p-5 text-center font-display text-lg font-semibold text-card-foreground"
+          >
+            {region}
+          </div>
         ))}
-      </Stagger>
+      </div>
     </SectionShell>
   );
 }
@@ -285,8 +287,8 @@ function CaseStudies() {
     <SectionShell variant="muted">
       <SectionHeader
         eyebrow="Results"
-        title="Pipeline our prospects can forecast"
-        description="Selected wins from B2B growth companies that partnered with Rovolto for outbound."
+        title="Create new B2B business opportunities"
+        description="Examples of documented replies, bid requests, proposal requests, and meetings from outreach. These are not claims of signed contracts or revenue."
         align="center"
       />
       <Stagger className="grid gap-4 md:grid-cols-3">
@@ -318,11 +320,7 @@ function Testimonials() {
   const featured = testimonials.slice(0, 3);
   return (
     <SectionShell>
-      <SectionHeader
-        eyebrow="Testimonials"
-        title="What prospects say about Rovolto"
-        align="center"
-      />
+      <SectionHeader eyebrow="Testimonials" title="Client feedback" align="center" />
       <Stagger className="grid gap-4 md:grid-cols-3">
         {featured.map((t) => (
           <StaggerItem key={t.name} className="h-full">
@@ -349,7 +347,7 @@ function CTA() {
     <SectionShell variant="navy">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
-          Ready to fill your pipeline with qualified meetings?
+          Ready to create new business opportunities?
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
           Tell us about your ICP and sales goals. We'll reply with a tailored outbound plan and

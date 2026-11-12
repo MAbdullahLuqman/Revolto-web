@@ -2,11 +2,7 @@ import { createFileRoute } from "@/lib/router-compat";
 import { SimplePage, pageMeta } from "@/components/SimplePage";
 
 export const Route = createFileRoute("/webinars")({
-  head: () =>
-    pageMeta(
-      "Live sessions with our outbound team — Rovolto",
-      "Join working sessions on messaging, targeting, and pipeline forecasting.",
-    ),
+  head: () => pageMeta("Rovolto Webinars", "Information about public Rovolto webinars."),
   component: Page,
 });
 
@@ -14,19 +10,17 @@ function Page() {
   return (
     <SimplePage
       eyebrow="Webinars"
-      title="Live sessions with our outbound team"
-      description="Join working sessions on messaging, targeting, and pipeline forecasting."
+      title="Webinars"
+      description="There are no webinar dates or recordings listed at this time. Contact Rovolto to discuss your outreach questions."
       blocks={[
         {
-          title: "Cold email teardown",
-          body: "We review live sequences and rewrite them on the call.",
+          title: "Contact Rovolto",
+          body: "Ask about targeted outreach, appointment setting, or social media marketing.",
         },
-        { title: "ICP workshop", body: "Build a target account list from scratch in 45 minutes." },
         {
-          title: "Deliverability clinic",
-          body: "Diagnose inbox placement problems with our engineers.",
+          title: "Discuss your audience",
+          body: "Share which businesses and decision makers you want to reach.",
         },
-        { title: "On demand", body: "Every past session is available to watch on demand." },
       ]}
     />
   );

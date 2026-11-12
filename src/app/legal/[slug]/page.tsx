@@ -1,10 +1,15 @@
-"use client";
+import { notFound } from "next/navigation";
+import ClientPage from "./client-page";
 
-import { useParams } from "next/navigation";
-import { Route } from "@/routes/legal.$slug";
-import { RouteRenderer } from "@/lib/router-compat";
-
-export default function Page() {
-  const { slug } = useParams<{ slug: string }>();
-  return <RouteRenderer route={Route} params={{ slug }} />;
+const legalSlugs = [
+  "privacy-policy",
+  "terms-of-use",
+  "cookie-policy",
+  "accessibility",
+  "anti-modern-slavery",
+];
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  if (!legalSlugs.includes(slug)) notFound();
+  return <ClientPage slug={slug} />;
 }

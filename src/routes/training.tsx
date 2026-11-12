@@ -4,8 +4,8 @@ import { SimplePage, pageMeta } from "@/components/SimplePage";
 export const Route = createFileRoute("/training")({
   head: () =>
     pageMeta(
-      "Enablement for your in-house sales team — Rovolto",
-      "We train SDRs and AEs to run the same playbooks we use for clients.",
+      "Sales Enablement — Rovolto",
+      "Discuss sales enablement and strategy support scoped to your in-house team.",
     ),
   component: Page,
 });
@@ -14,24 +14,24 @@ function Page() {
   return (
     <SimplePage
       eyebrow="Training"
-      title="Enablement for your in-house sales team"
-      description="We train SDRs and AEs to run the same playbooks we use for clients."
+      title="Sales enablement shaped around your team"
+      description="Rovolto can discuss strategy and enablement as part of a scoped engagement. Specific training formats and deliverables are agreed before work begins."
       blocks={[
         {
-          title: "SDR bootcamp",
-          body: "Prospecting, messaging, objection handling, and call structure over four weeks.",
+          title: "Prospecting and messaging",
+          body: "Discuss the skills and sales activities your team wants to develop.",
         },
         {
-          title: "Manager coaching",
-          body: "Pipeline reviews, activity coaching, and performance frameworks for SDR leaders.",
+          title: "Team support",
+          body: "Coaching and management support can be included when agreed in the engagement scope.",
         },
         {
           title: "Messaging workshops",
-          body: "Rewrite your value proposition for each persona in your market.",
+          body: "Messaging work is scoped to your offer, buyer roles, and chosen channels.",
         },
         {
-          title: "Tooling setup",
-          body: "Sequencer, CRM, and data stack configuration with your team in the room.",
+          title: "Delivery format",
+          body: "Timeline, format, tools, and responsibilities are discussed before a quote is prepared.",
         },
       ]}
     />

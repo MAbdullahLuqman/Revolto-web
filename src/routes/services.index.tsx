@@ -9,7 +9,7 @@ export const Route = createFileRoute("/services/")({
   head: () =>
     pageMeta(
       "Lead Generation Services — Rovolto",
-      "Targeted email marketing, LinkedIn outreach, InMail campaigns, Sales Navigator strategies, Apollo data, and managed lead generation from Rovolto.",
+      "Targeted outreach, appointment setting, sales development, and social media marketing for B2B business growth.",
     ),
   component: ServicesIndex,
 });

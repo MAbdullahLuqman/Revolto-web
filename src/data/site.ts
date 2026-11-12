@@ -2,29 +2,31 @@ export const site = {
   name: "Rovolto",
   tagline: "Lead generation services",
   email: "ahmad@rovolto.net",
-  domain: "https://rovolto.com",
+  domain: "https://www.rovolto.com",
 } as const;
 
 export const nav = {
   main: [
     { label: "Services", to: "/services" },
     { label: "Industries", to: "/industries" },
+    { label: "Case Studies", to: "/case-studies" },
     { label: "Approach", to: "/approach" },
     { label: "Pricing", to: "/pricing" },
     { label: "About", to: "/about" },
   ],
   services: [
-    { title: "Security contracts", to: "/services/security-contacts" },
-    { title: "Startup lead generation", to: "/services/startup-lead-generation" },
     { title: "Email marketing", to: "/services/email-marketing" },
-    { title: "Appointment setting", to: "/services/appointment-setting" },
+    { title: "Social Media Marketing", to: "/services/social-media-marketing" },
     { title: "Cold email outreach", to: "/services/cold-email-outreach" },
     {
       title: "LinkedIn outreach and Sales Navigator",
       to: "/services/linkedin-sales-navigator-outreach",
     },
+    { title: "Appointment setting", to: "/services/appointment-setting" },
     { title: "Account management", to: "/services/account-management" },
     { title: "Sales development", to: "/services/sales-development" },
+    { title: "Security contracts", to: "/services/security-contacts" },
+    { title: "Startup lead generation", to: "/services/startup-lead-generation" },
     { title: "Enterprise lead generation", to: "/services/enterprise-lead-generation" },
     { title: "SMB lead generation", to: "/services/smb-lead-generation" },
   ],

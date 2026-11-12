@@ -10,6 +10,18 @@ export async function POST(request: Request) {
     website: text(form.get("website")),
     message: text(form.get("message")),
   };
+  if (
+    !lead.firstName ||
+    !lead.lastName ||
+    !lead.company ||
+    !lead.message ||
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email)
+  ) {
+    return Response.json(
+      { error: "Please complete the required fields with a valid email address." },
+      { status: 400 },
+    );
+  }
   const response = await fetch(firestoreUrl("leads"), {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -31,7 +43,11 @@ export async function POST(request: Request) {
     return Response.json({ error: "Could not save lead" }, { status: 500 });
   }
 
-  await sendLeadEmail(lead);
+  try {
+    await sendLeadEmail(lead);
+  } catch (error) {
+    console.error("Lead saved, but notification email failed", error);
+  }
 
   return Response.json({ ok: true });
 }
@@ -47,10 +63,7 @@ export async function GET(request: Request) {
   if (!response.ok) {
     const details = await response.text();
     console.error("Could not load leads", details);
-    return Response.json(
-      { error: details || "Could not load leads" },
-      { status: response.status },
-    );
+    return Response.json({ error: details || "Could not load leads" }, { status: response.status });
   }
 
   const data = (await response.json()) as {

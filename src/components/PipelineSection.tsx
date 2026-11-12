@@ -1,88 +1,36 @@
-import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 
-const journey = [
+const outreach = [
   {
-    title: "Omnichannel engagement",
-    body: "We build a plan that combines email, LinkedIn, and cold calling to reach your prospects at the right time and in the right place.",
+    title: "Targeting",
+    body: "Agree the target accounts, buyer roles, geography, and fit criteria before outreach starts.",
   },
   {
-    title: "Activation",
-    body: "Sequences go live with tested messaging, verified data, and daily quality checks on every touchpoint.",
+    title: "Outreach",
+    body: "Plan the messaging, channels, and responsibilities around your offer and chosen market.",
   },
   {
-    title: "Conversion",
-    body: "Interested replies are qualified, objections handled, and meetings booked straight into your team's calendar.",
-  },
-];
-
-const yourPart = [
-  {
-    title: "Deal closure",
-    body: "Your AEs take the qualified conversation from first meeting to signed contract while we keep the funnel full.",
+    title: "Response review",
+    body: "Review replies and meeting interest against the criteria agreed with your team.",
   },
 ];
 
-const funnel = [
-  {
-    label: "Leads",
-    value: "Up to 18,000* prospects within your prospect profile",
-    w: "100%",
-    accent: true,
-  },
-  { label: "MQLs", value: "Up to 9,000* marketing-qualified leads", w: "88%", accent: false },
-  {
-    label: "SQLs",
-    value: "200+* qualified meetings with decision-makers",
-    w: "74%",
-    accent: false,
-  },
-  {
-    label: "Revenue",
-    value: "$1M+* revenue generated",
-    note: "10-30 converted deals",
-    w: "60%",
-    accent: false,
-  },
+const pipeline = [
+  { title: "Target accounts", body: "Research aligned to your buyer profile", width: "100%" },
+  { title: "Outreach", body: "Agreed messaging and channels", width: "88%" },
+  { title: "Responses", body: "Replies reviewed against your criteria", width: "76%" },
+  { title: "Sales handoff", body: "Your team owns follow-up and closing", width: "64%" },
 ];
 
-function Accordion({ items, label }: { items: { title: string; body: string }[]; label: string }) {
-  const [open, setOpen] = useState(0);
+function JourneyItem({ title, body }: { title: string; body: string }) {
   return (
-    <div className="rounded-2xl border border-border p-4 sm:p-6">
-      <p className="mb-4 text-sm text-muted-foreground">{label}</p>
-      <div className="space-y-3">
-        {items.map((item, i) => {
-          const isOpen = open === i;
-          return (
-            <button
-              key={item.title}
-              type="button"
-              onClick={() => setOpen(isOpen ? -1 : i)}
-              className={`block w-full rounded-xl px-5 py-4 text-left transition-colors ${
-                isOpen ? "bg-navy-900" : "bg-navy-900/60 hover:bg-navy-900/70"
-              }`}
-            >
-              <span className="flex items-center justify-between gap-4">
-                <span className="font-display text-base font-semibold text-foreground">
-                  {item.title}
-                </span>
-                <ChevronRight
-                  className={`h-4 w-4 shrink-0 transition-transform ${
-                    isOpen ? "rotate-90 text-accent-orange" : "text-muted-foreground"
-                  }`}
-                />
-              </span>
-              {isOpen ? (
-                <span className="mt-3 block text-sm leading-relaxed text-muted-foreground">
-                  {item.body}
-                </span>
-              ) : null}
-            </button>
-          );
-        })}
-      </div>
-    </div>
+    <details open className="group rounded-xl bg-navy-900/70 px-5 py-4 open:bg-navy-900">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-semibold text-foreground">
+        {title}
+        <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-90 group-open:text-accent-orange" />
+      </summary>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
+    </details>
   );
 }
 
@@ -90,57 +38,55 @@ export function PipelineSection() {
   return (
     <section className="bg-navy-950 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl font-bold text-balance text-foreground md:text-5xl">
-            How your pipeline will look with Rovolto
+            How your pipeline takes shape with Rovolto
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
-            Focus on scaling your business while we deliver you sales-ready B2B leads.
+            Rovolto supports the agreed outreach work. Your team helps shape the offer and takes
+            sales conversations forward after handoff.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="mt-14 grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="space-y-6">
-            <Accordion items={journey} label="We take care of the entire user journey" />
-            <Accordion items={yourPart} label="Your part in the process" />
+            <div className="rounded-2xl border border-border p-4 sm:p-6">
+              <p className="mb-4 text-sm text-muted-foreground">Rovolto’s part in the journey</p>
+              <div className="space-y-3">
+                {outreach.map((item) => (
+                  <JourneyItem key={item.title} {...item} />
+                ))}
+              </div>
+            </div>
+            <div className="rounded-2xl border border-border p-4 sm:p-6">
+              <p className="mb-4 text-sm text-muted-foreground">Your part in the process</p>
+              <JourneyItem
+                title="Sales handoff"
+                body="Your sales team follows up, qualifies the opportunity, and owns any proposal, contract, or close."
+              />
+            </div>
           </div>
 
-          <div>
-            <p className="text-center text-sm leading-relaxed text-muted-foreground">
-              * Average yearly outcomes.
-              <br />
-              The results depend on multiple factors.
-            </p>
-            <div className="mt-6 flex flex-col items-center">
-              {funnel.map((step, i) => (
-                <div key={step.label} className="flex w-full flex-col items-center">
-                  <div className="relative z-10 -mb-3 rounded-md bg-navy-900 px-4 py-1 text-xs font-semibold text-foreground">
-                    {step.label}
-                  </div>
-                  <div
-                    className={`flex min-h-[130px] items-center justify-center px-8 py-8 text-center ${
-                      step.accent
-                        ? "bg-accent-orange text-accent-orange-foreground"
-                        : "bg-navy-900/70 text-foreground"
-                    }`}
-                    style={{
-                      width: step.w,
-                      clipPath: "polygon(0 0, 100% 0, 92% 100%, 8% 100%)",
-                    }}
-                  >
-                    <p className="max-w-xs font-display text-base font-semibold leading-snug md:text-lg">
-                      {step.value}
-                      {"note" in step ? (
-                        <span className="mt-2 block font-sans text-xs font-medium text-muted-foreground">
-                          {step.note}
-                        </span>
-                      ) : null}
-                    </p>
-                  </div>
-                  {i < funnel.length - 1 ? <div className="h-3" /> : null}
+          <div className="flex flex-col items-center pt-2">
+            {pipeline.map((stage, index) => (
+              <div key={stage.title} className="flex w-full flex-col items-center">
+                <div className="relative z-10 -mb-3 rounded-md bg-navy-900 px-4 py-1 text-xs font-semibold text-foreground">
+                  {stage.title}
                 </div>
-              ))}
-            </div>
+                <div
+                  className={`flex min-h-32 items-center justify-center px-8 py-8 text-center ${index === 0 ? "bg-accent-orange text-accent-orange-foreground" : "bg-navy-900/70 text-foreground"}`}
+                  style={{
+                    width: stage.width,
+                    clipPath: "polygon(0 0, 100% 0, 92% 100%, 8% 100%)",
+                  }}
+                >
+                  <p className="max-w-xs font-display text-base font-semibold leading-snug md:text-lg">
+                    {stage.body}
+                  </p>
+                </div>
+                {index < pipeline.length - 1 ? <div className="h-3" /> : null}
+              </div>
+            ))}
           </div>
         </div>
       </div>
